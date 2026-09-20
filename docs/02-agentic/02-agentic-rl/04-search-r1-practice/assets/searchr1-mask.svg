@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 460" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">Search-R1 的多轮 token 流：观察不算 loss</text>
+
+  <!-- model generated (green, loss ✓) -->
+  <rect x="60" y="80" width="180" height="70" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="150" y="110" text-anchor="middle" font-size="13.5" font-weight="600" fill="#047857">生成：思考 + &lt;search&gt;query&lt;/search&gt;</text>
+  <text x="150" y="134" text-anchor="middle" font-size="12" fill="#475569">loss ✓ · 这些 token 有概率</text>
+
+  <!-- env (orange, masked) -->
+  <rect x="300" y="80" width="180" height="70" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="390" y="110" text-anchor="middle" font-size="13.5" font-weight="600" fill="#B45309">环境返回：搜索结果</text>
+  <text x="390" y="134" text-anchor="middle" font-size="12" fill="#92400E">loss ✗ mask 掉（非模型生成）</text>
+
+  <!-- model again -->
+  <rect x="540" y="80" width="180" height="70" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="630" y="110" text-anchor="middle" font-size="13.5" font-weight="600" fill="#047857">继续：再思考 / 再搜索</text>
+  <text x="630" y="134" text-anchor="middle" font-size="12" fill="#475569">loss ✓</text>
+
+  <!-- answer -->
+  <rect x="780" y="80" width="120" height="70" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="840" y="110" text-anchor="middle" font-size="13.5" font-weight="600" fill="#047857">最终答案</text>
+  <text x="840" y="134" text-anchor="middle" font-size="12" fill="#475569">对 → R=1</text>
+
+  <line x1="240" y1="115" x2="294" y2="115" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="480" y1="115" x2="534" y2="115" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="720" y1="115" x2="774" y2="115" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- engineering details -->
+  <rect x="60" y="190" width="840" height="120" rx="12" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="480" y="220" text-anchor="middle" font-size="15.5" font-weight="600" fill="#111827">复现时逐个确认的四个工程点</text>
+  <text x="250" y="250" text-anchor="middle" font-size="13" fill="#374151">① mask：观察段设 label=-100</text>
+  <text x="690" y="250" text-anchor="middle" font-size="13" fill="#374151">② 拼接：多轮拼成一条序列</text>
+  <text x="250" y="286" text-anchor="middle" font-size="13" fill="#374151">③ 截断：超长的处理策略要固定</text>
+  <text x="690" y="286" text-anchor="middle" font-size="13" fill="#374151">④ 交互：批量并发搜索（吞吐）</text>
+
+  <!-- reward -->
+  <rect x="60" y="330" width="840" height="90" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="480" y="358" text-anchor="middle" font-size="15" font-weight="600" fill="#047857">奖励：答案 EM/F1（RLVR 思路）＋ 格式约束（search 标签合法）</text>
+  <text x="480" y="386" text-anchor="middle" font-size="13" fill="#475569">消融建议：结果级 vs 每轮给「检索相关度」奖励——后者收益与 hacking 风险并存，亲自试</text>
+  <text x="480" y="410" text-anchor="middle" font-size="13" fill="#9CA3AF">硬件：Qwen2.5-1.5B 单机可跑；搜索可用本地 BM25 顶替（省 API 且可控）</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 340" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="38" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">同样的 logits，不同温度 → 不同的「策略分布」</text>
+  <text x="470" y="64" text-anchor="middle" font-size="14" fill="#6B7280">假设三个候选 token 的打分 z = (2.0, 1.0, 0.5)，π(a|s) = softmax(z / T)</text>
+
+  <!-- baseline -->
+  <line x1="60" y1="250" x2="880" y2="250" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- T=0.5 group: 0.844 0.114 0.042 -->
+  <rect x="130" y="149" width="42" height="101" rx="4" fill="#1D4ED8"/>
+  <rect x="180" y="236" width="42" height="14" rx="4" fill="#60A5FA"/>
+  <rect x="230" y="245" width="42" height="5" rx="4" fill="#BFDBFE"/>
+  <text x="201" y="132" text-anchor="middle" font-size="15" font-weight="600" fill="#1D4ED8">0.84 / 0.11 / 0.04</text>
+  <text x="201" y="278" text-anchor="middle" font-size="15.5" font-weight="600" fill="#111827">T = 0.5 低温</text>
+  <text x="201" y="302" text-anchor="middle" font-size="13.5" fill="#6B7280">几乎只出第 1 个（自信）</text>
+
+  <!-- T=1 group: 0.63 0.23 0.14 -->
+  <rect x="400" y="175" width="42" height="75" rx="4" fill="#1D4ED8"/>
+  <rect x="450" y="222" width="42" height="28" rx="4" fill="#60A5FA"/>
+  <rect x="500" y="233" width="42" height="17" rx="4" fill="#BFDBFE"/>
+  <text x="471" y="158" text-anchor="middle" font-size="15" font-weight="600" fill="#1D4ED8">0.63 / 0.23 / 0.14</text>
+  <text x="471" y="278" text-anchor="middle" font-size="15.5" font-weight="600" fill="#111827">T = 1 标准</text>
+  <text x="471" y="302" text-anchor="middle" font-size="13.5" fill="#6B7280">你平时采样模型的样子</text>
+
+  <!-- T=2 group: 0.48 0.29 0.23 -->
+  <rect x="670" y="192" width="42" height="58" rx="4" fill="#1D4ED8"/>
+  <rect x="720" y="215" width="42" height="35" rx="4" fill="#60A5FA"/>
+  <rect x="770" y="223" width="42" height="27" rx="4" fill="#BFDBFE"/>
+  <text x="741" y="175" text-anchor="middle" font-size="15" font-weight="600" fill="#1D4ED8">0.48 / 0.29 / 0.23</text>
+  <text x="741" y="278" text-anchor="middle" font-size="15.5" font-weight="600" fill="#111827">T = 2 高温</text>
+  <text x="741" y="302" text-anchor="middle" font-size="13.5" fill="#6B7280">分布变平（接近均匀）</text>
+
+  <text x="470" y="332" text-anchor="middle" font-size="14" fill="#374151">RLHF/RL 里常监控「分布的平缓程度」= 熵；熵坍缩（越训越尖）是 RL 训练的常见病</text>
+</svg>

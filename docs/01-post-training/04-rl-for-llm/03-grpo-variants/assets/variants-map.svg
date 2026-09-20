@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 470" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">变体地图：四个病灶，五张药方</text>
+
+  <!-- problem column -->
+  <text x="200" y="80" text-anchor="middle" font-size="15.5" font-weight="600" fill="#B91C1C">GRPO 的病灶</text>
+  <rect x="60" y="95" width="280" height="64" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="200" y="122" text-anchor="middle" font-size="14" font-weight="600" fill="#B91C1C">① 长度偏差</text>
+  <text x="200" y="146" text-anchor="middle" font-size="12.5" fill="#991B1B">loss 按回答平均 → 偏好短</text>
+
+  <rect x="60" y="175" width="280" height="64" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="200" y="202" text-anchor="middle" font-size="14" font-weight="600" fill="#B91C1C">② std 归一化偏置</text>
+  <text x="200" y="226" text-anchor="middle" font-size="12.5" fill="#991B1B">组内波动小 → 噪声被放大</text>
+
+  <rect x="60" y="255" width="280" height="64" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="200" y="282" text-anchor="middle" font-size="14" font-weight="600" fill="#B91C1C">③ 全对/全错零梯度</text>
+  <text x="200" y="306" text-anchor="middle" font-size="12.5" fill="#991B1B">白采样一组</text>
+
+  <rect x="60" y="335" width="280" height="64" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="200" y="362" text-anchor="middle" font-size="14" font-weight="600" fill="#B91C1C">④ 熵坍缩 / clip 失效</text>
+  <text x="200" y="386" text-anchor="middle" font-size="12.5" fill="#991B1B">分布越来越尖，探索消失</text>
+
+  <!-- fixes column -->
+  <text x="690" y="80" text-anchor="middle" font-size="15.5" font-weight="600" fill="#047857">药方（谁开的）</text>
+
+  <rect x="530" y="95" width="330" height="64" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="695" y="122" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">Dr. GRPO：去掉 1/|o| 与 std</text>
+  <text x="695" y="146" text-anchor="middle" font-size="12.5" fill="#475569">loss 按常数归一 → 无长度偏置</text>
+
+  <rect x="530" y="175" width="330" height="64" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="695" y="202" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">RLOO / Dr. GRPO：不除 std</text>
+  <text x="695" y="226" text-anchor="middle" font-size="12.5" fill="#475569">只减均值（leave-one-out 无偏）</text>
+
+  <rect x="530" y="255" width="330" height="64" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="695" y="282" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">DAPO 动态采样：丢弃无效组重采</text>
+  <text x="695" y="306" text-anchor="middle" font-size="12.5" fill="#475569">保证 batch 里全是有效梯度</text>
+
+  <rect x="530" y="335" width="330" height="64" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="695" y="362" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">DAPO clip-higher：放宽上限 clip</text>
+  <text x="695" y="386" text-anchor="middle" font-size="12.5" fill="#475569">低概率 token 也能被推高 → 保熵</text>
+
+  <!-- arrows -->
+  <line x1="340" y1="127" x2="524" y2="127" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="340" y1="207" x2="524" y2="207" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="340" y1="287" x2="524" y2="287" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="340" y1="367" x2="524" y2="367" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <text x="470" y="440" text-anchor="middle" font-size="14" fill="#6B7280">另一条路线：VinePPO / VAPO 保留 Critic，用 MC rollout 修 credit assignment——「修好 critic」而不是「扔掉 critic」</text>
+</svg>

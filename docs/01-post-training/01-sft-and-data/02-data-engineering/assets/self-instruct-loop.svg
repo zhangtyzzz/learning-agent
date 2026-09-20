@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">Self-Instruct：模型给自己造数据（闭环）</text>
+
+  <!-- seed -->
+  <rect x="60" y="90" width="190" height="76" rx="12" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="155" y="122" text-anchor="middle" font-size="15.5" font-weight="600" fill="#374151">175 条种子指令</text>
+  <text x="155" y="148" text-anchor="middle" font-size="12.5" fill="#6B7280">人手写的任务模板</text>
+
+  <!-- LLM generate -->
+  <rect x="350" y="82" width="200" height="92" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="450" y="114" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4ED8">LLM 生成新指令</text>
+  <text x="450" y="140" text-anchor="middle" font-size="12.5" fill="#475569">改写 / 扩展难度</text>
+  <text x="450" y="162" text-anchor="middle" font-size="12.5" fill="#475569">并生成回答</text>
+
+  <!-- filter -->
+  <rect x="650" y="90" width="190" height="76" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="745" y="122" text-anchor="middle" font-size="15.5" font-weight="600" fill="#B45309">过滤去重</text>
+  <text x="745" y="148" text-anchor="middle" font-size="12.5" fill="#92400E">ROUGE 查重 / 规则筛</text>
+
+  <line x1="250" y1="128" x2="344" y2="128" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="128" x2="644" y2="128" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- train -->
+  <rect x="650" y="250" width="190" height="76" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="745" y="282" text-anchor="middle" font-size="15.5" font-weight="600" fill="#047857">SFT 训练</text>
+  <text x="745" y="308" text-anchor="middle" font-size="12.5" fill="#475569">52k 条（Alpaca）</text>
+
+  <!-- stronger model closes loop -->
+  <rect x="350" y="250" width="200" height="76" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="450" y="282" text-anchor="middle" font-size="15.5" font-weight="600" fill="#B91C1C">更强的模型</text>
+  <text x="450" y="308" text-anchor="middle" font-size="12.5" fill="#991B1B">→ 生成更高质量数据</text>
+
+  <line x1="745" y1="166" x2="745" y2="244" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 644 288 C 590 288, 585 288, 556 288" fill="none" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 350 288 C 240 288, 180 240, 155 172" fill="none" stroke="#374151" stroke-width="2.5" stroke-dasharray="9 6" marker-end="url(#arrow)"/>
+  <text x="200" y="360" font-size="13.5" fill="#B91C1C">闭环飞轮：数据喂模型 → 模型造更好数据（也是后面所有「自我改进」的原型）</text>
+</svg>

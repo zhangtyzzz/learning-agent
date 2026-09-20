@@ -1,0 +1,60 @@
+{"id": "mdp", "type": "concept", "title": "MDP", "domain": "foundations", "status": "todo", "importance": 4, "summary": "马尔可夫决策过程：state/action/reward/transition，一切 RL 的形式化基础"}
+{"id": "math-basics", "type": "concept", "title": "数学基础补丁", "domain": "foundations", "status": "todo", "importance": 5, "summary": "期望与采样、softmax/温度、熵与交叉熵、梯度/log/sigmoid：读后训练论文的最小数学集"}
+{"id": "policy-gradient", "type": "concept", "title": "策略梯度 / REINFORCE", "domain": "foundations", "status": "todo", "importance": 5, "summary": "直接对期望回报求梯度；方差大是核心痛点"}
+{"id": "advantage", "type": "concept", "title": "优势函数 / Baseline", "domain": "foundations", "status": "todo", "importance": 4, "summary": "A = Q - V，减方差的核心技巧；GAE 是其带偏差-方差权衡的估计器"}
+{"id": "ppo", "type": "method", "title": "PPO", "domain": "foundations", "status": "todo", "importance": 5, "summary": "近端策略优化：clipped surrogate 约束策略更新步长，LLM RL 的基石算法"}
+{"id": "trpo", "type": "method", "title": "TRPO", "domain": "foundations", "status": "todo", "importance": 2, "summary": "PPO 前身：信任域约束的二阶解法，理解「为什么要约束更新」"}
+{"id": "kl-divergence", "type": "concept", "title": "KL 散度", "domain": "foundations", "status": "todo", "importance": 4, "summary": "约束当前策略不偏离参考策略的核心工具；k3 估计器；前向/反向 KL 的取舍"}
+{"id": "bradley-terry", "type": "concept", "title": "Bradley-Terry 模型", "domain": "preference-alignment", "status": "todo", "importance": 5, "summary": "偏好概率建模：P(A>B)=σ(rA-rB)，RM 和 DPO 共同的数学基座"}
+{"id": "instruction-tuning", "type": "concept", "title": "指令微调", "domain": "sft-data", "status": "todo", "importance": 4, "summary": "用 (指令,回答) 数据做监督微调，后训练的起点"}
+{"id": "lora", "type": "method", "title": "LoRA", "domain": "sft-data", "status": "todo", "importance": 3, "summary": "低秩适配：冻结权重学增量矩阵，PEFT 事实标准"}
+{"id": "synthetic-data", "type": "concept", "title": "合成数据", "domain": "sft-data", "status": "todo", "importance": 3, "summary": "模型生成训练数据：self-instruct → 蒸馏 → 自举，现代后训练的数据主粮"}
+{"id": "rlhf", "type": "concept", "title": "RLHF 三阶段", "domain": "preference-alignment", "status": "todo", "importance": 5, "summary": "SFT → RM → PPO 的经典范式，行为对齐人类偏好"}
+{"id": "rlaif", "type": "concept", "title": "RLAIF / Constitutional AI", "domain": "preference-alignment", "status": "todo", "importance": 2, "summary": "用原则+AI 反馈替代人类标注偏好"}
+{"id": "dpo", "type": "method", "title": "DPO", "domain": "preference-alignment", "status": "todo", "importance": 5, "summary": "直接偏好优化：跳过显式 RM，在偏好对上闭式优化，必须有隐式 KL 约束"}
+{"id": "reward-model", "type": "concept", "title": "奖励模型 RM", "domain": "reward-models", "status": "todo", "importance": 5, "summary": "从偏好数据学的打分器，RLHF 的上限所在"}
+{"id": "prm", "type": "concept", "title": "过程奖励模型 PRM", "domain": "reward-models", "status": "todo", "importance": 4, "summary": "逐步骤打分 vs ORM 只看结果；best-of-N、树搜索、step-level RL 的基础"}
+{"id": "reward-hacking", "type": "concept", "title": "Reward Hacking", "domain": "reward-models", "status": "todo", "importance": 4, "summary": "RM 分数涨而真实质量跌的过度优化现象，一切奖励设计的达摩克利斯之剑"}
+{"id": "grpo", "type": "method", "title": "GRPO", "domain": "rl-for-llm", "status": "todo", "importance": 5, "summary": "组相对策略优化：采样一组、组内归一化作 advantage、去掉 critic"}
+{"id": "rlvr", "type": "concept", "title": "RLVR 可验证奖励", "domain": "rl-for-llm", "status": "todo", "importance": 5, "summary": "用答案匹配/单元测试等可验证信号做奖励，推理 RL 的点火器"}
+{"id": "cot", "type": "concept", "title": "思维链 CoT", "domain": "reasoning", "status": "learned", "importance": 4, "summary": "生成中间推理步骤提升答案质量；推理模型的输出形态"}
+{"id": "self-consistency", "type": "method", "title": "Self-Consistency", "domain": "reasoning", "status": "learned", "importance": 3, "summary": "多样采样+投票：test-time scaling 最初形态"}
+{"id": "test-time-scaling", "type": "concept", "title": "Test-Time Scaling", "domain": "reasoning", "status": "todo", "importance": 4, "summary": "推理时花更多算力换更好答案：BoN/beam/MCTS/budget forcing"}
+{"id": "distillation", "type": "concept", "title": "推理蒸馏", "domain": "reasoning", "status": "todo", "importance": 3, "summary": "用强模型的推理轨迹训小模型：便宜、快速，但上限受限"}
+{"id": "agent-loop", "type": "concept", "title": "Agent Loop", "domain": "agent-paradigms", "status": "learned", "importance": 4, "summary": "感知-推理-行动循环；用 RL 语言即一条多轮 trajectory"}
+{"id": "tool-use", "type": "concept", "title": "工具调用", "domain": "agent-paradigms", "status": "learned", "importance": 4, "summary": "函数调用/搜索/代码执行，扩展动作空间的核心机制"}
+{"id": "planning-search", "type": "concept", "title": "规划与搜索", "domain": "agent-paradigms", "status": "learned", "importance": 3, "summary": "ToT/MCTS 式生成-评估-回溯，test-time 的策略改进"}
+{"id": "multi-turn-rl", "type": "concept", "title": "多轮 RL", "domain": "agentic-rl", "status": "todo", "importance": 5, "summary": "agentic RL 的核心：多轮交互、部分可观测、轨迹级优化的特有难题"}
+{"id": "credit-assignment", "type": "concept", "title": "Credit Assignment", "domain": "agentic-rl", "status": "todo", "importance": 4, "summary": "长轨迹里哪个动作该记功：层级 advantage / 过程奖励 / MC rollout"}
+{"id": "environment-scaling", "type": "concept", "title": "Environment Scaling", "domain": "agentic-rl", "status": "todo", "importance": 4, "summary": "任务/环境的自动生成与课程化，agentic RL 的数据问题"}
+{"id": "agent-memory", "type": "concept", "title": "Agent 记忆", "domain": "memory-long-horizon", "status": "todo", "importance": 3, "summary": "工作/情景/语义/程序记忆分层；记忆操作可视为可训练的动作"}
+{"id": "multi-agent", "type": "concept", "title": "多智能体系统", "domain": "multi-agent-self-improve", "status": "todo", "importance": 3, "summary": "编排 vs 训练的分界：通信即 action space"}
+{"id": "self-improvement", "type": "concept", "title": "自我改进闭环", "domain": "multi-agent-self-improve", "status": "todo", "importance": 3, "summary": "生成-评估-训练三要素的自我化：self-play / self-reward / self-correct"}
+{"id": "p-instructgpt", "type": "paper", "title": "InstructGPT: Training LMs to follow instructions with human feedback", "domain": "preference-alignment", "status": "todo", "importance": 5, "summary": "RLHF 三阶段奠基之作 (2203.02155)"}
+{"id": "p-cai", "type": "paper", "title": "Constitutional AI / RLAIF", "domain": "preference-alignment", "status": "todo", "importance": 2, "summary": "AI 反馈替代人类偏好 (2212.08073)"}
+{"id": "p-dpo", "type": "paper", "title": "DPO: Direct Preference Optimization", "domain": "preference-alignment", "status": "todo", "importance": 5, "summary": "偏好对齐的免 RM 路线 (2305.18290)"}
+{"id": "p-lets-verify", "type": "paper", "title": "Let's Verify Step by Step", "domain": "reward-models", "status": "todo", "importance": 5, "summary": "PRM 胜 ORM 的判决性工作 (2305.20050)"}
+{"id": "p-math-shepherd", "type": "paper", "title": "Math-Shepherd", "domain": "reward-models", "status": "todo", "importance": 4, "summary": "MC rollout 自动标注过程奖励 (2312.08935)"}
+{"id": "p-deepseekmath", "type": "paper", "title": "DeepSeekMath (GRPO)", "domain": "rl-for-llm", "status": "todo", "importance": 5, "summary": "提出 GRPO (2402.03300)"}
+{"id": "p-drgrpo", "type": "paper", "title": "Dr. GRPO", "domain": "rl-for-llm", "status": "todo", "importance": 3, "summary": "修正 GRPO 的长度与标准差偏差 (2503.20783)"}
+{"id": "p-dapo", "type": "paper", "title": "DAPO", "domain": "rl-for-llm", "status": "todo", "importance": 4, "summary": "clip-higher/动态采样/token 级 loss (2503.14476)"}
+{"id": "p-r1", "type": "paper", "title": "DeepSeek-R1", "domain": "reasoning", "status": "todo", "importance": 5, "summary": "纯 RLVR 涌现推理行为 + 完整训练管线 + 蒸馏 (2501.12948)"}
+{"id": "p-kimi-k15", "type": "paper", "title": "Kimi k1.5", "domain": "reasoning", "status": "todo", "importance": 4, "summary": "long2short、部分 rollout 等推理 RL 工程技巧 (2501.12599)"}
+{"id": "p-s1", "type": "paper", "title": "s1: Simple test-time scaling", "domain": "reasoning", "status": "todo", "importance": 4, "summary": "budget forcing 控制思考长度 (2501.19393)"}
+{"id": "p-rstar-math", "type": "paper", "title": "rStar-Math", "domain": "reasoning", "status": "todo", "importance": 3, "summary": "PRM+MCTS+自举的搜索式推理 (2501.04519)"}
+{"id": "p-react", "type": "paper", "title": "ReAct", "domain": "agent-paradigms", "status": "learned", "importance": 5, "summary": "推理+行动交错的 agent 骨架 (2210.03629)"}
+{"id": "p-reflexion", "type": "paper", "title": "Reflexion", "domain": "agent-paradigms", "status": "learned", "importance": 4, "summary": "语言自我反思记忆 (2303.11366)"}
+{"id": "p-tot", "type": "paper", "title": "Tree of Thoughts", "domain": "agent-paradigms", "status": "learned", "importance": 4, "summary": "推理搜索化 (2305.10601)"}
+{"id": "p-webrl", "type": "paper", "title": "WebRL", "domain": "agentic-rl", "status": "todo", "importance": 4, "summary": "self-evolving 课程解决环境数据问题 (2411.02337)"}
+{"id": "p-search-r1", "type": "paper", "title": "Search-R1", "domain": "agentic-rl", "status": "todo", "importance": 5, "summary": "搜索引擎即环境的多轮 GRPO，最佳入门复现 (2503.09516)"}
+{"id": "p-toolrl", "type": "paper", "title": "ToolRL", "domain": "agentic-rl", "status": "todo", "importance": 4, "summary": "工具学习的奖励设计系统研究 (2504.13958)"}
+{"id": "p-gigpo", "type": "paper", "title": "GiGPO", "domain": "agentic-rl", "status": "todo", "importance": 4, "summary": "group-in-group 层级 advantage 解决 agent credit assignment (2505.10978)"}
+{"id": "p-arpo", "type": "paper", "title": "ARPO", "domain": "agentic-rl", "status": "todo", "importance": 4, "summary": "高熵分歧处分支采样的 agentic 探索 (2507.19849)"}
+{"id": "p-memgpt", "type": "paper", "title": "MemGPT", "domain": "memory-long-horizon", "status": "todo", "importance": 3, "summary": "OS 式分层记忆自管理 (2310.08560)"}
+{"id": "p-self-rewarding", "type": "paper", "title": "Self-Rewarding Language Models", "domain": "multi-agent-self-improve", "status": "todo", "importance": 4, "summary": "LLM-as-judge 自评自训闭环 (2401.10020)"}
+{"id": "p-spin", "type": "paper", "title": "SPIN", "domain": "multi-agent-self-improve", "status": "todo", "importance": 3, "summary": "自博弈微调：对手是历史的自己 (2401.01335)"}
+{"id": "p-score", "type": "paper", "title": "SCoRe", "domain": "multi-agent-self-improve", "status": "todo", "importance": 3, "summary": "多轮 RL 训出真正的自我修正 (2409.12917)"}
+{"id": "fw-trl", "type": "framework", "title": "TRL (Hugging Face)", "domain": "rl-for-llm", "status": "todo", "importance": 4, "summary": "SFT/DPO/PPO/GRPO 全家桶，上手最友好"}
+{"id": "fw-verl", "type": "framework", "title": "verl (HybridFlow)", "domain": "rl-for-llm", "status": "todo", "importance": 5, "summary": "rollout/训练分离架构，agentic RL 事实标准 (2409.19256)"}
+{"id": "fw-openrlhf", "type": "framework", "title": "OpenRLHF", "domain": "rl-for-llm", "status": "todo", "importance": 2, "summary": "另一主流开源 RLHF 框架 (2405.11143)"}
+{"id": "fw-llamafactory", "type": "framework", "title": "LLaMA-Factory", "domain": "sft-data", "status": "todo", "importance": 3, "summary": "一站式 SFT/对齐工具链，P1 快速通道"}

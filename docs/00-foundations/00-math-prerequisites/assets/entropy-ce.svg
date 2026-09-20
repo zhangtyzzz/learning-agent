@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">LLM 的训练损失 = 交叉熵，一步看懂</text>
+
+  <!-- p box -->
+  <rect x="55" y="90" width="240" height="92" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="175" y="124" text-anchor="middle" font-size="16.5" font-weight="600" fill="#1D4ED8">真实分布 p</text>
+  <text x="175" y="152" text-anchor="middle" font-size="12.5" fill="#475569">语料里「下一个词」的</text>
+  <text x="175" y="172" text-anchor="middle" font-size="12.5" fill="#475569">真实概率</text>
+
+  <!-- q box -->
+  <rect x="375" y="90" width="240" height="92" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="495" y="124" text-anchor="middle" font-size="16.5" font-weight="600" fill="#B45309">模型预测 q</text>
+  <text x="495" y="152" text-anchor="middle" font-size="12.5" fill="#92400E">softmax 输出的</text>
+  <text x="495" y="172" text-anchor="middle" font-size="12.5" fill="#92400E">词表概率分布</text>
+
+  <!-- loss box -->
+  <rect x="695" y="90" width="160" height="92" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="775" y="128" text-anchor="middle" font-size="15.5" font-weight="600" fill="#B91C1C">平均惊讶度</text>
+  <text x="775" y="156" text-anchor="middle" font-size="13" fill="#991B1B">−log q(真实词)</text>
+
+  <line x1="295" y1="136" x2="369" y2="136" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="615" y1="136" x2="689" y2="136" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- formula strip -->
+  <rect x="120" y="222" width="660" height="50" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="450" y="253" text-anchor="middle" font-size="16.5" fill="#111827">H(p, q) = −Σ p(x)·log q(x)　＝　预训练 / SFT 的目标函数</text>
+
+  <!-- bridge strip -->
+  <rect x="120" y="292" width="660" height="56" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+  <text x="450" y="316" text-anchor="middle" font-size="16" font-weight="600" fill="#047857">桥：H(p, q) = H(p) + KL(p‖q)</text>
+  <text x="450" y="338" text-anchor="middle" font-size="13.5" fill="#374151">交叉熵 = 熵 + KL。第 4 讲的 KL，就是「交叉熵里多出来的那一部分」</text>
+</svg>

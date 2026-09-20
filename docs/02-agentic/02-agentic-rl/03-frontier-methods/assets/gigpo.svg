@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 470" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">GiGPO：在「轨迹组」里再分「步骤组」，两级记账</text>
+
+  <!-- outer group -->
+  <rect x="40" y="70" width="860" height="180" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="10 6"/>
+  <text x="80" y="100" font-size="14.5" font-weight="600" fill="#1D4ED8">外层组：同一 prompt 的多条轨迹（GRPO 式，算轨迹级优势）</text>
+
+  <!-- traces -->
+  <rect x="70" y="115" width="240" height="50" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="190" y="146" text-anchor="middle" font-size="13" fill="#374151">轨迹 A：成功，R=1</text>
+  <rect x="350" y="115" width="240" height="50" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="470" y="146" text-anchor="middle" font-size="13" fill="#374151">轨迹 B：成功，R=1</text>
+  <rect x="630" y="115" width="240" height="50" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="750" y="146" text-anchor="middle" font-size="13" fill="#374151">轨迹 C：失败，R=0</text>
+
+  <!-- inner group -->
+  <rect x="70" y="180" width="800" height="58" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="90" y="204" font-size="13.5" font-weight="600" fill="#047857">内层组：跨轨迹「同一状态」的动作归一组</text>
+  <text x="90" y="228" font-size="12.5" fill="#475569">例如三条轨迹都在「第 3 轮看到搜索结果」这个状态下行动 → 它们的动作可比：谁的后续回报高</text>
+
+  <!-- arrows from problem -->
+  <rect x="40" y="290" width="860" height="70" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+  <text x="470" y="318" text-anchor="middle" font-size="14.5" font-weight="600" fill="#B45309">解决：轨迹级优势一样（A=B=+, C=−）分不出功劳 → 步骤级组内对比让「纠错那步」单独记功</text>
+  <text x="470" y="344" text-anchor="middle" font-size="13" fill="#92400E">关键技巧：状态用「轮次+环境观察」哈希对齐，无需额外模型</text>
+
+  <!-- siblings -->
+  <rect x="40" y="380" width="420" height="60" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2"/>
+  <text x="250" y="404" text-anchor="middle" font-size="13.5" font-weight="600" fill="#374151">ARPO：在高熵分歧点分支采样</text>
+  <text x="250" y="426" text-anchor="middle" font-size="12" fill="#6B7280">探索花在「最拿不准」的步骤上</text>
+
+  <rect x="480" y="380" width="420" height="60" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2"/>
+  <text x="690" y="404" text-anchor="middle" font-size="13.5" font-weight="600" fill="#374151">WebRL：失败任务自动生成变体课程</text>
+  <text x="690" y="426" text-anchor="middle" font-size="12" fill="#6B7280">解难题③：环境数据自举</text>
+</svg>

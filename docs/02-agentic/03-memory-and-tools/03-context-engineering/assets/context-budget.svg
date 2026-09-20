@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 440" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">长程任务的上下文预算：一张 128K 窗口的账单</text>
+
+  <!-- budget bar -->
+  <rect x="70" y="90" width="200" height="90" rx="0" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="170" y="130" text-anchor="middle" font-size="14" font-weight="600" fill="#374151">系统提示 + 工具描述</text>
+  <text x="170" y="156" text-anchor="middle" font-size="12.5" fill="#9CA3AF">固定开销 ~15%</text>
+
+  <rect x="270" y="90" width="280" height="90" rx="0" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="410" y="130" text-anchor="middle" font-size="14" font-weight="600" fill="#1D4ED8">历史轨迹（增长最快）</text>
+  <text x="410" y="156" text-anchor="middle" font-size="12.5" fill="#475569">10-20 轮后占掉一半</text>
+
+  <rect x="550" y="90" width="200" height="90" rx="0" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="650" y="130" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">检索/工具结果</text>
+  <text x="650" y="156" text-anchor="middle" font-size="12.5" fill="#475569">单次可吃掉 20%+</text>
+
+  <rect x="750" y="90" width="120" height="90" rx="0" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="810" y="130" text-anchor="middle" font-size="14" font-weight="600" fill="#B45309">留给「思考」</text>
+  <text x="810" y="156" text-anchor="middle" font-size="12.5" fill="#92400E">常被挤到不足</text>
+
+  <!-- strategies -->
+  <rect x="70" y="220" width="260" height="160" rx="12" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="200" y="250" text-anchor="middle" font-size="14.5" font-weight="600" fill="#374151">压缩（有损编码）</text>
+  <text x="200" y="278" text-anchor="middle" font-size="12.5" fill="#475569">旧轮次摘要化</text>
+  <text x="200" y="304" text-anchor="middle" font-size="12.5" fill="#475569">风险：丢关键约束</text>
+  <text x="200" y="330" text-anchor="middle" font-size="12.5" fill="#9CA3AF">代表：滚动摘要</text>
+
+  <rect x="350" y="220" width="260" height="160" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="480" y="250" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">外置（检索取回）</text>
+  <text x="480" y="278" text-anchor="middle" font-size="12.5" fill="#475569">全量归档 + 按需查询</text>
+  <text x="480" y="304" text-anchor="middle" font-size="12.5" fill="#475569">风险：该取时没取</text>
+  <text x="480" y="330" text-anchor="middle" font-size="12.5" fill="#9CA3AF">代表：MemGPT / RAPTOR</text>
+
+  <rect x="630" y="220" width="240" height="160" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="750" y="250" text-anchor="middle" font-size="14.5" font-weight="600" fill="#047857">结构化（防稀释）</text>
+  <text x="750" y="278" text-anchor="middle" font-size="12.5" fill="#475569">观察结果提炼成要点</text>
+  <text x="750" y="304" text-anchor="middle" font-size="12.5" fill="#475569">风险：提炼有偏</text>
+  <text x="750" y="330" text-anchor="middle" font-size="12.5" fill="#9CA3AF">代表：GraphRAG 思路</text>
+
+  <text x="470" y="412" text-anchor="middle" font-size="14" fill="#374151">评测：LongMemEval 式回访测试——「上周说过的约束还记得吗」；策略选择 = 压缩率 × 信息丢失 × 检索成本的三角</text>
+</svg>

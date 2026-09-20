@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 430" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">Toolformer：模型自己标注「哪里该调工具」</text>
+
+  <!-- corpus -->
+  <rect x="60" y="80" width="200" height="80" rx="12" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="160" y="110" text-anchor="middle" font-size="14.5" font-weight="600" fill="#374151">海量普通语料</text>
+  <text x="160" y="136" text-anchor="middle" font-size="12.5" fill="#9CA3AF">不需要人工标注工具调用</text>
+
+  <!-- annotate -->
+  <rect x="360" y="80" width="230" height="80" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="475" y="110" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">① 种调用：随机插入</text>
+  <text x="475" y="136" text-anchor="middle" font-size="12.5" fill="#475569">候选位置插 API 调用占位</text>
+
+  <!-- test -->
+  <rect x="690" y="80" width="200" height="80" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="790" y="110" text-anchor="middle" font-size="14.5" font-weight="600" fill="#B45309">② 试执行</text>
+  <text x="790" y="136" text-anchor="middle" font-size="12.5" fill="#475569">真的调 API，拿到返回值</text>
+
+  <line x1="260" y1="120" x2="354" y2="120" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="590" y1="120" x2="684" y2="120" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- filter -->
+  <rect x="360" y="230" width="230" height="80" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="475" y="260" text-anchor="middle" font-size="14.5" font-weight="600" fill="#047857">③ 用有用性过滤</text>
+  <text x="475" y="286" text-anchor="middle" font-size="12.5" fill="#475569">有返回值 vs 无调用，算 LM loss 差</text>
+
+  <!-- train -->
+  <rect x="690" y="230" width="200" height="80" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="790" y="260" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">④ 保留有效样本</text>
+  <text x="790" y="286" text-anchor="middle" font-size="12.5" fill="#475569">→ SFT（自我标注闭环）</text>
+
+  <path d="M 790 160 L 790 224" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="690" y1="270" x2="596" y2="270" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 360 270 C 200 270, 160 220, 160 166" fill="none" stroke="#374151" stroke-width="2.5" stroke-dasharray="9 6" marker-end="url(#arrow)"/>
+
+  <!-- key -->
+  <rect x="70" y="350" width="820" height="52" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="480" y="372" text-anchor="middle" font-size="14.5" font-weight="600" fill="#111827">判据只有一条：「调用后，模型对后续文本的困惑度降了」= 这次调用真的有用</text>
+  <text x="480" y="392" text-anchor="middle" font-size="12.5" fill="#9CA3AF">这就是「执行反馈即奖励」的最小雏形——后来的工具 RL（第 4 模块）把 loss 差换成了任务奖励</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 440" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">ToT：把「一条路走到黑」换成「生成-评估-回溯」</text>
+
+  <!-- root -->
+  <rect x="400" y="80" width="140" height="50" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="470" y="110" text-anchor="middle" font-size="13.5" font-weight="600" fill="#374151">问题</text>
+
+  <!-- level 1 -->
+  <rect x="150" y="180" width="150" height="48" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="225" y="209" text-anchor="middle" font-size="13" fill="#1D4ED8">思路 A（评估 4/10）</text>
+  <rect x="400" y="180" width="150" height="48" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="475" y="209" text-anchor="middle" font-size="13" fill="#047857">思路 B（评估 8/10）✓</text>
+  <rect x="650" y="180" width="150" height="48" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="725" y="209" text-anchor="middle" font-size="13" fill="#1D4ED8">思路 C（评估 5/10）</text>
+
+  <!-- level 2 (under B) -->
+  <rect x="300" y="290" width="150" height="48" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="375" y="319" text-anchor="middle" font-size="13" fill="#047857">B1（9/10）✓ 继续</text>
+  <rect x="510" y="290" width="150" height="48" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="585" y="319" text-anchor="middle" font-size="13" fill="#B91C1C">B2（3/10）✗ 剪枝</text>
+
+  <line x1="440" y1="130" x2="250" y2="174" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="470" y1="130" x2="473" y2="174" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="500" y1="130" x2="700" y2="174" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="450" y1="228" x2="390" y2="284" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="500" y1="228" x2="560" y2="284" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- three ops -->
+  <rect x="60" y="360" width="830" height="60" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="200" y="386" text-anchor="middle" font-size="13.5" font-weight="600" fill="#374151">三种操作：生成（分支）</text>
+  <text x="470" y="386" text-anchor="middle" font-size="13.5" font-weight="600" fill="#374151">评估（打分=PRM 思想）</text>
+  <text x="740" y="386" text-anchor="middle" font-size="13.5" font-weight="600" fill="#374151">回溯（剪枝重来）</text>
+  <text x="470" y="432" text-anchor="middle" font-size="13.5" fill="#6B7280">RL 视角：ToT 是 test-time 的策略改进——搜索 = 手工版 MCTS；推理模型把「多想」内化后，ToT 退居「超难任务的增强脚手架」</text>
+</svg>

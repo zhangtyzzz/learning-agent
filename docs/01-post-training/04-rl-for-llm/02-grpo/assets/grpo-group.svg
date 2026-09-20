@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 470" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">GRPO：一个 prompt 采一组，组内比出优势</text>
+
+  <!-- prompt -->
+  <rect x="70" y="180" width="150" height="70" rx="12" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="145" y="210" text-anchor="middle" font-size="15" font-weight="600" fill="#374151">同一个 prompt</text>
+  <text x="145" y="234" text-anchor="middle" font-size="12.5" fill="#9CA3AF">G = 8 条采样</text>
+
+  <!-- group of answers -->
+  <rect x="300" y="70" width="250" height="290" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="425" y="98" text-anchor="middle" font-size="15" font-weight="600" fill="#1D4ED8">一组回答 + 分数</text>
+  <text x="360" y="126" font-size="13.5" fill="#047857">回答 A　score 1.0　↑</text>
+  <text x="360" y="152" font-size="13.5" fill="#047857">回答 B　score 0.8　↑</text>
+  <text x="360" y="178" font-size="13.5" fill="#6B7280">回答 C　score 0.5　—</text>
+  <text x="360" y="204" font-size="13.5" fill="#6B7280">回答 D　score 0.5　—</text>
+  <text x="360" y="230" font-size="13.5" fill="#B91C1C">回答 E　score 0.2　↓</text>
+  <text x="360" y="256" font-size="13.5" fill="#B91C1C">回答 F　score 0.1　↓</text>
+  <text x="360" y="290" font-size="12.5" fill="#9CA3AF">组均值 = 0.5，组 std = σ</text>
+  <text x="360" y="316" font-size="12.5" fill="#9CA3AF">均值当 baseline（免 critic）</text>
+  <text x="360" y="342" font-size="12.5" fill="#9CA3AF">std 归一化当缩放</text>
+
+  <!-- advantages -->
+  <rect x="640" y="90" width="230" height="80" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="755" y="118" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">Â = (score − mean) / std</text>
+  <text x="755" y="146" text-anchor="middle" font-size="13" fill="#475569">好回答 +优势，差回答 −优势</text>
+
+  <rect x="640" y="200" width="230" height="80" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="755" y="228" text-anchor="middle" font-size="14" font-weight="600" fill="#B45309">PPO 的 clip 目标照用</text>
+  <text x="755" y="256" text-anchor="middle" font-size="13" fill="#475569">逐 token 更新，附 KL 正则</text>
+
+  <line x1="220" y1="215" x2="294" y2="215" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="130" x2="634" y2="130" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="240" x2="634" y2="240" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- formula strip -->
+  <rect x="70" y="378" width="800" height="62" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="470" y="404" text-anchor="middle" font-size="15.5" fill="#111827">L = − (1/G) Σ_i (1/|o_i|) Σ_t { min[ ρ·Â, clip(ρ, 1±ε)·Â ] − β·KL } ，ρ = πθ/πθ_old</text>
+  <text x="470" y="428" text-anchor="middle" font-size="12.5" fill="#9CA3AF">与 PPO 唯二的区别：Â 来自组内归一化（无 critic）；KL 是对 π_ref 的正则项</text>
+</svg>

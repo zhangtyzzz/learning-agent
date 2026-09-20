@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 460" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">多轮 RL：整条轨迹只有末端一个奖励</text>
+
+  <!-- trajectory timeline -->
+  <line x1="70" y1="150" x2="880" y2="150" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="90" y="90" width="90" height="44" rx="8" fill="#F9FAFB" stroke="#6B7280" stroke-width="2"/>
+  <text x="135" y="118" text-anchor="middle" font-size="12.5" fill="#374151">任务下发</text>
+  <rect x="200" y="90" width="110" height="44" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <text x="255" y="118" text-anchor="middle" font-size="12.5" fill="#1D4ED8">思考+调搜索</text>
+  <rect x="330" y="90" width="90" height="44" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+  <text x="375" y="118" text-anchor="middle" font-size="12.5" fill="#B45309">搜索结果</text>
+  <rect x="440" y="90" width="110" height="44" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <text x="495" y="118" text-anchor="middle" font-size="12.5" fill="#1D4ED8">调错 API ✗</text>
+  <rect x="570" y="90" width="110" height="44" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+  <text x="625" y="118" text-anchor="middle" font-size="12.5" fill="#047857">纠错+调对 API</text>
+  <rect x="700" y="90" width="90" height="44" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+  <text x="745" y="118" text-anchor="middle" font-size="12.5" fill="#047857">正确答案 ✓</text>
+
+  <!-- terminal reward -->
+  <rect x="810" y="200" width="110" height="60" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="3"/>
+  <text x="865" y="226" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">R = 1</text>
+  <text x="865" y="248" text-anchor="middle" font-size="11.5" fill="#475569">只在终点</text>
+  <line x1="790" y1="134" x2="830" y2="194" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- credit assignment question -->
+  <path d="M 495 140 C 495 190, 560 240, 700 258" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <text x="240" y="212" font-size="14" font-weight="600" fill="#B91C1C">难题①：功劳该记给「纠错的那一步」？</text>
+
+  <!-- four challenges -->
+  <rect x="60" y="290" width="400" height="140" rx="12" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="260" y="318" text-anchor="middle" font-size="15" font-weight="600" fill="#111827">算法侧难题</text>
+  <text x="260" y="346" text-anchor="middle" font-size="13" fill="#374151">① credit assignment：哪步记功？</text>
+  <text x="260" y="372" text-anchor="middle" font-size="13" fill="#374151">② 奖励设计：稀疏结果 vs 密集过程</text>
+  <text x="260" y="398" text-anchor="middle" font-size="13" fill="#6B7280">（ hacking 在多轮里更隐蔽）</text>
+
+  <rect x="490" y="290" width="400" height="140" rx="12" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="690" y="318" text-anchor="middle" font-size="15" font-weight="600" fill="#111827">工程侧难题</text>
+  <text x="690" y="346" text-anchor="middle" font-size="13" fill="#374151">③ 环境与数据：任务从哪来、怎么扩</text>
+  <text x="690" y="372" text-anchor="middle" font-size="13" fill="#374151">④ 多轮工程：mask/拼接/截断/rollout 成本</text>
+  <text x="690" y="398" text-anchor="middle" font-size="13" fill="#6B7280">（观察 token 不算 loss、上下文超长）</text>
+</svg>

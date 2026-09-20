@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 430" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">数据管线是一条漏斗：层层过滤，越往下越少越精</text>
+
+  <!-- funnel layers -->
+  <rect x="170" y="70" width="600" height="58" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="200" y="106" font-size="15.5" font-weight="600" fill="#374151">① 采集　~10⁶ 条</text>
+  <text x="560" y="106" font-size="13" fill="#6B7280">工单 / 内部文档 / 人工撰写 / 模型合成</text>
+
+  <rect x="200" y="152" width="540" height="58" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="230" y="188" font-size="15.5" font-weight="600" fill="#1D4ED8">② 质量过滤　→ ~10⁵</text>
+  <text x="560" y="188" font-size="13" fill="#475569">规则（长度/格式）＋ 模型打分挑除低质</text>
+
+  <rect x="230" y="234" width="480" height="58" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="260" y="270" font-size="15.5" font-weight="600" fill="#047857">③ 去污染 → 剩 9 成</text>
+    <text x="560" y="270" font-size="13" fill="#475569">与测试集 n-gram/嵌入查重，防「背题」</text>
+
+  <rect x="260" y="316" width="420" height="58" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="290" y="352" font-size="15.5" font-weight="600" fill="#B45309">④ 配比与多样性 → 最终集</text>
+  <text x="560" y="352" font-size="13" fill="#475569">能力分桶：问答/代码/推理/安全各占多少</text>
+
+  <line x1="470" y1="128" x2="470" y2="148" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="470" y1="210" x2="470" y2="230" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="470" y1="292" x2="470" y2="312" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <text x="470" y="406" text-anchor="middle" font-size="14.5" fill="#374151">工程真相：SFT 效果的上限在②③④，不在①——大多数团队的失败是「只有①」</text>
+</svg>

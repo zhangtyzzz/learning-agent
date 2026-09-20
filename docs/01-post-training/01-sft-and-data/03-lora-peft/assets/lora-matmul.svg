@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">LoRA：冻住大矩阵，只训两条「小路」</text>
+
+  <!-- full finetune -->
+  <rect x="60" y="90" width="120" height="240" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="120" y="150" text-anchor="middle" font-size="16" font-weight="600" fill="#B91C1C">W₀</text>
+  <text x="120" y="180" text-anchor="middle" font-size="13" fill="#991B1B">d×d 全参</text>
+  <text x="120" y="206" text-anchor="middle" font-size="13" fill="#991B1B">全部更新</text>
+  <text x="120" y="240" text-anchor="middle" font-size="13.5" font-weight="600" fill="#B91C1C">显存/存储爆炸</text>
+  <text x="120" y="266" text-anchor="middle" font-size="13" fill="#9CA3AF">7B ≈ 14GB 权重</text>
+  <text x="120" y="292" text-anchor="middle" font-size="13" fill="#9CA3AF">（fp16 梯度+优化器另算）</text>
+
+  <text x="260" y="215" font-size="20" fill="#374151">vs</text>
+
+  <!-- LoRA -->
+  <rect x="310" y="90" width="120" height="240" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="370" y="150" text-anchor="middle" font-size="16" font-weight="600" fill="#374151">W₀</text>
+  <text x="370" y="180" text-anchor="middle" font-size="13" fill="#6B7280">冻结 ❄️</text>
+  <text x="370" y="210" text-anchor="middle" font-size="13" fill="#9CA3AF">梯度不算</text>
+  <text x="370" y="240" text-anchor="middle" font-size="13" fill="#9CA3AF">优化器状态为 0</text>
+  <text x="370" y="292" text-anchor="middle" font-size="13.5" font-weight="600" fill="#374151">可训练参数 0.1%~1%</text>
+
+  <!-- A and B path -->
+  <rect x="560" y="130" width="90" height="52" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="605" y="162" text-anchor="middle" font-size="15" font-weight="600" fill="#047857">A (d×r)</text>
+  <rect x="700" y="210" width="90" height="52" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="745" y="242" text-anchor="middle" font-size="15" font-weight="600" fill="#047857">B (r×d)</text>
+  <line x1="650" y1="156" x2="715" y2="216" stroke="#10B981" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="700" y="150" font-size="14" fill="#047857">r ≪ d（如 8~64）</text>
+  <text x="745" y="300" text-anchor="middle" font-size="13" fill="#475569">只有 A、B 参与训练</text>
+
+  <!-- formula strip -->
+  <rect x="70" y="350" width="800" height="50" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="470" y="381" text-anchor="middle" font-size="17" fill="#111827">h = W₀x + (α/r)·B·A x　　权重合并：W = W₀ + (α/r)·B·A</text>
+</svg>

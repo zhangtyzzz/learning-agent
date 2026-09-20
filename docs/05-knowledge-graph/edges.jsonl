@@ -1,0 +1,73 @@
+{"src": "math-basics", "rel": "prereq_of", "dst": "mdp", "note": "Bellman 方程里的期望记号"}
+{"src": "math-basics", "rel": "prereq_of", "dst": "policy-gradient", "note": "log-derivative trick"}
+{"src": "math-basics", "rel": "prereq_of", "dst": "kl-divergence", "note": "KL = 交叉熵 − 熵"}
+{"src": "math-basics", "rel": "prereq_of", "dst": "bradley-terry", "note": "sigmoid 把分数差变概率"}
+{"src": "mdp", "rel": "prereq_of", "dst": "policy-gradient", "note": "策略梯度建立在 MDP 形式化上"}
+{"src": "policy-gradient", "rel": "prereq_of", "dst": "ppo", "note": "PPO 是策略梯度方法的改进"}
+{"src": "advantage", "rel": "prereq_of", "dst": "ppo", "note": "PPO 使用 GAE advantage"}
+{"src": "kl-divergence", "rel": "prereq_of", "dst": "ppo", "note": "PPO 可带 KL penalty 约束漂移"}
+{"src": "ppo", "rel": "extends", "dst": "trpo", "note": "PPO 用 clip 近似信任域约束"}
+{"src": "instruction-tuning", "rel": "prereq_of", "dst": "rlhf", "note": "SFT 是 RLHF 第一阶段"}
+{"src": "bradley-terry", "rel": "prereq_of", "dst": "reward-model", "note": "RM 损失即 BT 极大似然"}
+{"src": "bradley-terry", "rel": "prereq_of", "dst": "dpo", "note": "DPO 推导用 BT 把 reward 反解成 policy 表达"}
+{"src": "reward-model", "rel": "prereq_of", "dst": "rlhf", "note": "RLHF 第二阶段训 RM"}
+{"src": "ppo", "rel": "prereq_of", "dst": "grpo", "note": "GRPO 是 PPO 的 critic-free 变体"}
+{"src": "kl-divergence", "rel": "prereq_of", "dst": "grpo", "note": "GRPO 损失中的 KL 正则项"}
+{"src": "grpo", "rel": "compared_to", "dst": "ppo", "note": "去 critic、组内相对 advantage"}
+{"src": "dpo", "rel": "compared_to", "dst": "rlhf", "note": "免 RM 的离线路线 vs 在线 RL 路线"}
+{"src": "tool-use", "rel": "prereq_of", "dst": "multi-turn-rl", "note": "工具调用构成多轮动作空间"}
+{"src": "agent-loop", "rel": "prereq_of", "dst": "multi-turn-rl", "note": "agent 循环即多轮 trajectory"}
+{"src": "credit-assignment", "rel": "prereq_of", "dst": "multi-turn-rl", "note": "多轮长轨迹的核心难题"}
+{"src": "cot", "rel": "prereq_of", "dst": "self-consistency", "note": "投票建立在多条 CoT 采样上"}
+{"src": "cot", "rel": "applied_in", "dst": "p-react", "note": "ReAct 把 CoT 外化为行动"}
+{"src": "synthetic-data", "rel": "applied_in", "dst": "instruction-tuning", "note": "合成指令数据的主流来源"}
+{"src": "lora", "rel": "applied_in", "dst": "instruction-tuning", "note": "低成本微调的默认选择"}
+{"src": "prm", "rel": "applied_in", "dst": "test-time-scaling", "note": "过程奖励引导 BoN/树搜索"}
+{"src": "self-consistency", "rel": "related_to", "dst": "test-time-scaling", "note": "test-time scaling 的最初形态"}
+{"src": "rlvr", "rel": "related_to", "dst": "test-time-scaling", "note": "RLVR 训出可控的长思考"}
+{"src": "rlvr", "rel": "related_to", "dst": "reward-model", "note": "可验证信号 vs 学习到的奖励"}
+{"src": "reward-hacking", "rel": "related_to", "dst": "reward-model", "note": "RM 过度优化的根源"}
+{"src": "reward-hacking", "rel": "related_to", "dst": "rlvr", "note": "验证器也会被 hack（如单元测试弱）"}
+{"src": "multi-agent", "rel": "related_to", "dst": "self-improvement", "note": "辩论/互评是多智能体的一种用法"}
+{"src": "environment-scaling", "rel": "related_to", "dst": "multi-turn-rl", "note": "环境数据是多轮 RL 的燃料"}
+{"src": "agent-memory", "rel": "related_to", "dst": "multi-turn-rl", "note": "记忆管理可成为可训练策略"}
+{"src": "p-instructgpt", "rel": "introduces", "dst": "rlhf", "note": "三阶段范式确立"}
+{"src": "p-instructgpt", "rel": "introduces", "dst": "reward-model", "note": "人工偏好训 RM 的规模化首例"}
+{"src": "p-cai", "rel": "introduces", "dst": "rlaif", "note": "原则化 AI 反馈"}
+{"src": "p-dpo", "rel": "introduces", "dst": "dpo", "note": "提出 DPO"}
+{"src": "p-lets-verify", "rel": "introduces", "dst": "prm", "note": "PRM800K 与过程监督优势"}
+{"src": "p-math-shepherd", "rel": "extends", "dst": "prm", "note": "自动标注过程奖励数据"}
+{"src": "p-deepseekmath", "rel": "introduces", "dst": "grpo", "note": "GRPO 首次提出"}
+{"src": "p-drgrpo", "rel": "extends", "dst": "grpo", "note": "修正长度/std 偏差"}
+{"src": "p-dapo", "rel": "extends", "dst": "grpo", "note": "clip-higher、动态采样等四项改进"}
+{"src": "p-r1", "rel": "introduces", "dst": "rlvr", "note": "大规模验证 RLVR 涌现推理行为"}
+{"src": "p-r1", "rel": "applied_in", "dst": "distillation", "note": "R1 蒸馏小模型系列"}
+{"src": "p-r1", "rel": "compared_to", "dst": "p-kimi-k15", "note": "同期两条推理 RL 路线"}
+{"src": "p-kimi-k15", "rel": "applied_in", "dst": "rlvr", "note": "推理 RL 的另一完整实现"}
+{"src": "p-s1", "rel": "extends", "dst": "test-time-scaling", "note": "budget forcing 旋钮"}
+{"src": "p-rstar-math", "rel": "extends", "dst": "prm", "note": "PRM+MCTS 自举训练"}
+{"src": "p-react", "rel": "introduces", "dst": "agent-loop", "note": "交错推理-行动范式"}
+{"src": "p-reflexion", "rel": "extends", "dst": "p-react", "note": "加语言反思记忆"}
+{"src": "p-tot", "rel": "introduces", "dst": "planning-search", "note": "树状探索评估回溯"}
+{"src": "p-webrl", "rel": "introduces", "dst": "environment-scaling", "note": "self-evolving 课程生成"}
+{"src": "p-webrl", "rel": "applied_in", "dst": "multi-turn-rl", "note": "网页操作多轮 RL"}
+{"src": "multi-turn-rl", "rel": "applied_in", "dst": "p-search-r1", "note": "搜索环境多轮轨迹优化"}
+{"src": "rlvr", "rel": "applied_in", "dst": "p-search-r1", "note": "答案 F1 可验证奖励"}
+{"src": "grpo", "rel": "applied_in", "dst": "p-search-r1", "note": "多轮 GRPO 训练"}
+{"src": "rlvr", "rel": "applied_in", "dst": "p-toolrl", "note": "工具调用正确性奖励"}
+{"src": "multi-turn-rl", "rel": "applied_in", "dst": "p-toolrl", "note": "工具使用轨迹优化"}
+{"src": "credit-assignment", "rel": "applied_in", "dst": "p-gigpo", "note": "层级 group-in-group advantage"}
+{"src": "multi-turn-rl", "rel": "applied_in", "dst": "p-gigpo", "note": "agent 轨迹的分组优化"}
+{"src": "credit-assignment", "rel": "applied_in", "dst": "p-arpo", "note": "高熵分歧点分支探索"}
+{"src": "grpo", "rel": "applied_in", "dst": "p-arpo", "note": "在 GRPO 基础上改采样策略"}
+{"src": "p-memgpt", "rel": "introduces", "dst": "agent-memory", "note": "分层记忆自管理"}
+{"src": "p-self-rewarding", "rel": "introduces", "dst": "self-improvement", "note": "自评自训闭环"}
+{"src": "p-spin", "rel": "extends", "dst": "self-improvement", "note": "自博弈变体"}
+{"src": "p-score", "rel": "extends", "dst": "self-improvement", "note": "RL 学自我修正"}
+{"src": "fw-verl", "rel": "implements", "dst": "grpo", "note": "P3/P4/P5 实践主力框架"}
+{"src": "fw-verl", "rel": "implements", "dst": "ppo", "note": "含 PPO 实现"}
+{"src": "fw-trl", "rel": "implements", "dst": "dpo", "note": "DPOTrainer"}
+{"src": "fw-trl", "rel": "implements", "dst": "ppo", "note": "PPOTrainer / GRPOTrainer 也有"}
+{"src": "fw-openrlhf", "rel": "implements", "dst": "ppo", "note": "Ray 分布式 PPO"}
+{"src": "fw-llamafactory", "rel": "implements", "dst": "instruction-tuning", "note": "一站式 SFT"}
+{"src": "fw-llamafactory", "rel": "implements", "dst": "lora", "note": "PEFT 全支持"}

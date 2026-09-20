@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 480" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">训练还是编排？一棵决策树</text>
+
+  <!-- root -->
+  <rect x="380" y="70" width="180" height="52" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="470" y="102" text-anchor="middle" font-size="14.5" font-weight="600" fill="#374151">能力瓶颈在哪？</text>
+
+  <!-- level 1 -->
+  <rect x="120" y="170" width="220" height="66" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="230" y="198" text-anchor="middle" font-size="13.5" font-weight="600" fill="#B45309">任务无法被单模型完成</text>
+  <text x="230" y="222" text-anchor="middle" font-size="12" fill="#92400E">需拆解 / 多视角 / 并行</text>
+
+  <rect x="600" y="170" width="220" height="66" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="710" y="198" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1D4ED8">单模型能力不够</text>
+  <text x="710" y="222" text-anchor="middle" font-size="12" fill="#475569">行为/判断/推理短板</text>
+
+  <line x1="420" y1="122" x2="250" y2="164" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="520" y1="122" x2="690" y2="164" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- level 2 left: orchestrate -->
+  <rect x="60" y="280" width="170" height="60" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="145" y="305" text-anchor="middle" font-size="13.5" font-weight="600" fill="#047857">子任务可验证？</text>
+  <rect x="290" y="280" width="170" height="60" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="375" y="305" text-anchor="middle" font-size="13.5" font-weight="600" fill="#B91C1C">子任务主观模糊？</text>
+  <text x="145" y="366" text-anchor="middle" font-size="13.5" fill="#047857">→ 编排（流水线/管理式）</text>
+  <text x="145" y="390" text-anchor="middle" font-size="12" fill="#6B7280">每跳加校验器</text>
+  <text x="375" y="366" text-anchor="middle" font-size="13.5" fill="#B91C1C">→ 编排 + 人审节点</text>
+  <text x="375" y="390" text-anchor="middle" font-size="12" fill="#6B7280">别急着训练，先减误差传播</text>
+  <line x1="210" y1="236" x2="160" y2="274" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="255" y1="236" x2="350" y2="274" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- level 2 right: train -->
+  <rect x="540" y="280" width="170" height="60" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="625" y="305" text-anchor="middle" font-size="13.5" font-weight="600" fill="#047857">有可验证奖励？</text>
+  <rect x="760" y="280" width="150" height="60" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="835" y="305" text-anchor="middle" font-size="13.5" font-weight="600" fill="#B45309">只有偏好信号？</text>
+  <text x="625" y="366" text-anchor="middle" font-size="13.5" fill="#047857">→ RLVR + GRPO 训练</text>
+  <text x="625" y="390" text-anchor="middle" font-size="12" fill="#6B7280">参考第 4 模块</text>
+  <text x="835" y="366" text-anchor="middle" font-size="13.5" fill="#B45309">→ SFT/DPO 起步</text>
+  <text x="835" y="390" text-anchor="middle" font-size="12" fill="#6B7280">参考第 2 模块</text>
+  <line x1="680" y1="236" x2="640" y2="274" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="740" y1="236" x2="815" y2="274" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <text x="470" y="438" text-anchor="middle" font-size="14.5" font-weight="600" fill="#111827">默认顺序：编排先行（便宜可逆）→ 数据攒够 → 训练解决编排到不了的短板</text>
+  <text x="470" y="462" text-anchor="middle" font-size="13" fill="#9CA3AF">反例警示：模型根本不会的能力，编排多少层也变不出来——此时训练不可绕过</text>
+</svg>

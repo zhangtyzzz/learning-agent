@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <marker id="up" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 10 L 5 0 L 10 10 z" fill="#10B981"/>
+    </marker>
+    <marker id="down" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 10 L 5 0 L 10 10 z" fill="#EF4444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="42" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">REINFORCE：按回报给整条轨迹「调音量」</text>
+
+  <!-- policy box -->
+  <rect x="60" y="125" width="185" height="90" rx="14" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="152" y="163" text-anchor="middle" font-size="19" font-weight="600" fill="#1D4ED8">策略 π(a|s)</text>
+  <text x="152" y="192" text-anchor="middle" font-size="13.5" fill="#475569">采样一堆完整轨迹</text>
+
+  <!-- good trajectory -->
+  <rect x="330" y="60" width="520" height="90" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <line x1="365" y1="135" x2="365" y2="85" stroke="#10B981" stroke-width="5" marker-end="url(#up)"/>
+  <text x="395" y="97" font-size="17" font-weight="600" fill="#047857">好轨迹（G = +1，答对了）</text>
+  <text x="395" y="128" font-size="14.5" fill="#374151">整条轨迹里每个 token 的 log 概率 → 全部调高</text>
+
+  <!-- bad trajectory -->
+  <rect x="330" y="180" width="520" height="90" rx="12" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5"/>
+  <line x1="365" y1="195" x2="365" y2="245" stroke="#EF4444" stroke-width="5" marker-end="url(#down)"/>
+  <text x="395" y="217" font-size="17" font-weight="600" fill="#B91C1C">坏轨迹（G = −1，答错了）</text>
+  <text x="395" y="248" font-size="14.5" fill="#374151">整条轨迹里每个 token 的 log 概率 → 全部调低</text>
+
+  <!-- formula strip -->
+  <rect x="120" y="285" width="660" height="36" rx="8" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="450" y="309" text-anchor="middle" font-size="15.5" fill="#374151">∇J = E[ ∇log π(轨迹) × 回报 G ]　·　G 就是「音量旋钮」</text>
+</svg>

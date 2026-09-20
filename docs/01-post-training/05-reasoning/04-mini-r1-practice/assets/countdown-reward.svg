@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 430" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">mini-R1（countdown）：奖励设计只有两条规则</text>
+
+  <!-- task -->
+  <rect x="60" y="80" width="380" height="120" rx="12" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="250" y="110" text-anchor="middle" font-size="15.5" font-weight="600" fill="#374151">任务：countdown 游戏</text>
+  <text x="250" y="138" text-anchor="middle" font-size="13" fill="#4B5563">给数字 [2, 7, 9, 50] 与目标 81</text>
+  <text x="250" y="164" text-anchor="middle" font-size="13" fill="#4B5563">用四则运算凑出目标：(9+2)×7+50÷…</text>
+
+  <!-- rewards -->
+  <rect x="500" y="70" width="390" height="70" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="695" y="98" text-anchor="middle" font-size="14.5" font-weight="600" fill="#B45309">奖励① 格式（权重小）</text>
+  <text x="695" y="124" text-anchor="middle" font-size="12.5" fill="#92400E">输出里是否含 &lt;think&gt;…&lt;/think&gt; 与答案段</text>
+
+  <rect x="500" y="160" width="390" height="70" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="695" y="188" text-anchor="middle" font-size="14.5" font-weight="600" fill="#047857">奖励② 正确（权重大）</text>
+  <text x="695" y="214" text-anchor="middle" font-size="12.5" fill="#475569">答案段的表达式求值 = 目标 → 1，否则 0</text>
+
+  <!-- what to watch -->
+  <rect x="60" y="270" width="830" height="120" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="475" y="298" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4ED8">训练中盯四样东西（都是 R1 报告里的现象，小模型也能看到）</text>
+  <text x="240" y="328" text-anchor="middle" font-size="13.5" fill="#374151">响应长度曲线：先掉后涨</text>
+  <text x="475" y="328" text-anchor="middle" font-size="13.5" fill="#374151">格式收敛：几十步内全对</text>
+  <text x="700" y="328" text-anchor="middle" font-size="13.5" fill="#374151">正确率缓升</text>
+  <text x="475" y="364" text-anchor="middle" font-size="13.5" fill="#6B7280">出现回溯/自我检查的生成样例（截图存档）｜失败模式：直接猜答案（格式分拿满、正确率烂）</text>
+</svg>

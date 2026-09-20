@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="450" y="42" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">读后训练论文，需要的数学只有四块（每块到「会用」即可）</text>
+
+  <!-- block 1 -->
+  <rect x="40" y="80" width="820" height="100" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="70" y="122" font-size="18" font-weight="600" fill="#1D4ED8">① 概率与期望</text>
+  <text x="70" y="152" font-size="14" fill="#475569">E、采样 ~、分布：符号怎么读</text>
+  <text x="560" y="122" font-size="14" fill="#374151">用在：一切 RL 公式</text>
+  <text x="560" y="152" font-size="13" fill="#9CA3AF">→ 第 1、2、3 讲到处都是</text>
+
+  <!-- block 2 -->
+  <rect x="40" y="200" width="820" height="100" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="70" y="242" font-size="18" font-weight="600" fill="#047857">② softmax 与温度</text>
+  <text x="70" y="272" font-size="14" fill="#475569">logits → 概率分布；低温尖、高温平</text>
+  <text x="560" y="242" font-size="14" fill="#374151">用在：策略 π 就是它</text>
+  <text x="560" y="272" font-size="13" fill="#9CA3AF">→ 第 1 讲把 LLM 变成 RL 智能体</text>
+
+  <!-- block 3 -->
+  <rect x="40" y="320" width="820" height="100" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="70" y="362" font-size="18" font-weight="600" fill="#B45309">③ 熵与交叉熵</text>
+  <text x="70" y="392" font-size="14" fill="#475569">不确定性、平均惊讶、训练损失</text>
+  <text x="560" y="362" font-size="14" fill="#374151">用在：SFT / 预训练的损失函数</text>
+  <text x="560" y="392" font-size="13" fill="#9CA3AF">→ 也是第 4 讲 KL 的地基</text>
+
+  <!-- block 4 -->
+  <rect x="40" y="440" width="820" height="100" rx="12" fill="#FDF2F8" stroke="#EC4899" stroke-width="2.5"/>
+  <text x="70" y="482" font-size="18" font-weight="600" fill="#BE185D">④ 梯度 · log · sigmoid</text>
+  <text x="70" y="512" font-size="14" fill="#475569">上升最快方向、log 概率、分数→概率</text>
+  <text x="560" y="482" font-size="14" fill="#374151">用在：策略梯度推导、RM / DPO</text>
+  <text x="560" y="512" font-size="13" fill="#9CA3AF">→ 第 2、5 讲的主角</text>
+</svg>

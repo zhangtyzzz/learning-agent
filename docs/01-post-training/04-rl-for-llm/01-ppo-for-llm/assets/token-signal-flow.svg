@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 460" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">PPO-for-LLM：把一条回答拆成逐 token 的决策序列</text>
+
+  <!-- prompt -->
+  <rect x="60" y="90" width="130" height="64" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="125" y="118" text-anchor="middle" font-size="14.5" font-weight="600" fill="#374151">prompt x</text>
+  <text x="125" y="142" text-anchor="middle" font-size="12" fill="#9CA3AF">状态 s₀</text>
+
+  <!-- token boxes -->
+  <rect x="230" y="90" width="86" height="64" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="273" y="118" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">token₁</text>
+  <text x="273" y="142" text-anchor="middle" font-size="12" fill="#475569">a₁ → s₁</text>
+  <rect x="330" y="90" width="86" height="64" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="373" y="118" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">token₂</text>
+  <text x="373" y="142" text-anchor="middle" font-size="12" fill="#475569">a₂ → s₂</text>
+  <rect x="430" y="90" width="86" height="64" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="473" y="118" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">…</text>
+  <rect x="530" y="90" width="86" height="64" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="573" y="118" text-anchor="middle" font-size="14.5" font-weight="600" fill="#047857">token_T</text>
+  <text x="573" y="142" text-anchor="middle" font-size="12" fill="#475569">EOS 终止</text>
+
+  <line x1="190" y1="122" x2="224" y2="122" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="316" y1="122" x2="326" y2="122" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="516" y1="122" x2="526" y2="122" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- per-token signals -->
+  <rect x="230" y="196" width="386" height="54" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+  <text x="423" y="218" text-anchor="middle" font-size="13.5" font-weight="600" fill="#B45309">每个 token 都付 KL 税：− β·KL( πθ(·|s_t) ‖ π_ref(·|s_t) )</text>
+  <text x="423" y="240" text-anchor="middle" font-size="12.5" fill="#92400E">整体奖励 = RM 打分 − 所有 token 的税（KL 加进 reward 而非 loss）</text>
+
+  <!-- RM score -->
+  <rect x="660" y="90" width="220" height="64" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="770" y="118" text-anchor="middle" font-size="14.5" font-weight="600" fill="#047857">RM 整条打分 r(x, y)</text>
+  <text x="770" y="142" text-anchor="middle" font-size="12" fill="#475569">稀疏：只在终点发</text>
+  <line x1="616" y1="122" x2="654" y2="122" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- advantage -->
+  <rect x="130" y="290" width="700" height="60" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="480" y="315" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">Critic V(s_t) 逐步给基线 → GAE 算出每个 token 的优势 Â_t</text>
+  <text x="480" y="338" text-anchor="middle" font-size="13" fill="#475569">PPO clip 目标作用在每个 token 上：好 token 推高（封顶 1+ε），坏 token 压低（兜底 1−ε）</text>
+
+  <line x1="423" y1="250" x2="423" y2="284" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <text x="470" y="392" text-anchor="middle" font-size="14.5" fill="#374151">贵的原因：4 个模型同时在显存里（actor/critic/ref/RM）× on-policy 数据用一次就扔 × 每步都过 15 万维 softmax</text>
+  <text x="470" y="422" text-anchor="middle" font-size="14" fill="#9CA3AF">读实现时的对照点：KL 罚加在 reward 上（训练时 advantage 里已含），loss 里通常还有一层对旧策略的 KL 正则</text>
+</svg>

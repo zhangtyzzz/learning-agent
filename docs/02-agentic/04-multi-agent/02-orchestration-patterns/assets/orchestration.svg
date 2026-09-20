@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 440" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">三种编排模式：通信拓扑决定信息怎么流</text>
+
+  <!-- pipeline -->
+  <rect x="50" y="80" width="280" height="250" rx="12" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="190" y="110" text-anchor="middle" font-size="15.5" font-weight="600" fill="#374151">① 流水线（SOP 式）</text>
+  <rect x="90" y="130" width="80" height="40" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="130" y="155" text-anchor="middle" font-size="12.5" fill="#475569">产品</text>
+  <rect x="190" y="130" width="80" height="40" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="230" y="155" text-anchor="middle" font-size="12.5" fill="#475569">架构</text>
+  <rect x="140" y="200" width="80" height="40" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="180" y="225" text-anchor="middle" font-size="12.5" fill="#475569">编码</text>
+  <rect x="240" y="200" width="80" height="40" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="280" y="225" text-anchor="middle" font-size="12.5" fill="#475569">评审</text>
+  <line x1="170" y1="170" x2="165" y2="194" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="230" y1="170" x2="265" y2="194" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="190" y="280" text-anchor="middle" font-size="12.5" fill="#6B7280">MetaGPT：角色按流程接力</text>
+  <text x="190" y="304" text-anchor="middle" font-size="12" fill="#9CA3AF">适合：可分解、顺序明确的任务</text>
+
+  <!-- debate -->
+  <rect x="350" y="80" width="280" height="250" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="490" y="110" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4ED8">② 讨论式（Debate）</text>
+  <rect x="390" y="140" width="90" height="40" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="435" y="165" text-anchor="middle" font-size="12.5" fill="#475569">正方</text>
+  <rect x="510" y="140" width="90" height="40" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="555" y="165" text-anchor="middle" font-size="12.5" fill="#475569">反方</text>
+  <rect x="430" y="230" width="120" height="44" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+  <text x="490" y="257" text-anchor="middle" font-size="12.5" fill="#047857">裁判 → 答案</text>
+  <line x1="435" y1="180" x2="465" y2="224" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="555" y1="180" x2="515" y2="224" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="490" y="298" text-anchor="middle" font-size="12.5" fill="#6B7280"> Irving et al.：对抗暴露错误</text>
+  <text x="490" y="318" text-anchor="middle" font-size="12" fill="#9CA3AF">适合：答案可辩、需多视角的任务</text>
+
+  <!-- manager -->
+  <rect x="650" y="80" width="240" height="250" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="770" y="110" text-anchor="middle" font-size="15.5" font-weight="600" fill="#047857">③ 管理者式（AutoGen）</text>
+  <rect x="710" y="140" width="120" height="40" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="770" y="165" text-anchor="middle" font-size="12.5" fill="#475569">管理者 LLM</text>
+  <rect x="680" y="220" width="80" height="36" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="720" y="243" text-anchor="middle" font-size="12" fill="#475569">工人 A</text>
+  <rect x="780" y="220" width="80" height="36" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="820" y="243" text-anchor="middle" font-size="12" fill="#475569">工人 B</text>
+  <line x1="745" y1="180" x2="725" y2="214" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="795" y1="180" x2="815" y2="214" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="770" y="298" text-anchor="middle" font-size="12.5" fill="#6B7280">中心调度：谁干活、干多久</text>
+  <text x="770" y="318" text-anchor="middle" font-size="12" fill="#9CA3AF">适合：动态分解的开放任务</text>
+
+  <text x="470" y="380" text-anchor="middle" font-size="14.5" fill="#374151">RL 视角一句话：拓扑 = 联合策略的动作空间设计；CAMEL 式角色扮演还能顺手产出多智能体训练数据</text>
+  <text x="470" y="410" text-anchor="middle" font-size="13" fill="#9CA3AF">共同成本：误差在智能体间传播（一个错，全链歪）——编排得越深，越要评估每一跳</text>
+</svg>

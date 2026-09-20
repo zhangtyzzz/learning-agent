@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 430" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <!-- axes -->
+  <line x1="90" y1="330" x2="870" y2="330" stroke="#374151" stroke-width="2"/>
+  <line x1="90" y1="330" x2="90" y2="70" stroke="#374151" stroke-width="2"/>
+  <text x="470" y="42" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">Goodhart 曲线：proxy 分数一直涨，真实质量先涨后跌</text>
+  <text x="480" y="362" text-anchor="middle" font-size="14" fill="#6B7280">训练推进（KL 预算消耗）→</text>
+  <text x="60" y="80" font-size="14" fill="#6B7280">分数/质量</text>
+
+  <!-- proxy curve: keeps rising -->
+  <path d="M 110 300 C 250 220, 420 150, 600 110 C 700 92, 790 84, 850 80" fill="none" stroke="#F59E0B" stroke-width="4"/>
+  <text x="640" y="70" font-size="14.5" font-weight="600" fill="#B45309">proxy 分数（RM 打分）：持续上升</text>
+
+  <!-- gold curve: rises then falls -->
+  <path d="M 110 305 C 250 240, 380 180, 500 165 C 580 158, 650 180, 720 220 C 770 248, 810 275, 845 300" fill="none" stroke="#10B981" stroke-width="4"/>
+  <text x="560" y="230" font-size="14.5" font-weight="600" fill="#047857">真实质量（人评）：先升后降</text>
+
+  <!-- peak marker -->
+  <circle cx="540" cy="161" r="7" fill="#1F2937"/>
+  <text x="540" y="140" text-anchor="middle" font-size="13.5" fill="#111827">最佳点</text>
+  <path d="M 540 168 L 540 318" fill="none" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- right side warning -->
+  <rect x="90" y="384" width="780" height="34" rx="8" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="480" y="407" text-anchor="middle" font-size="14.5" font-weight="600" fill="#B91C1C">右侧 = reward hacking：模型在「讨好 RM」，不在「变好」。KL 预算就是用来推迟这个拐点的</text>
+</svg>

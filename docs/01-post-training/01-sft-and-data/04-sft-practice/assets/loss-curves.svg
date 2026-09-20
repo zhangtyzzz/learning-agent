@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <!-- axis -->
+  <line x1="90" y1="310" x2="840" y2="310" stroke="#374151" stroke-width="2"/>
+  <line x1="90" y1="310" x2="90" y2="60" stroke="#374151" stroke-width="2"/>
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">读 loss 曲线：三条线，三种命运</text>
+  <text x="470" y="345" text-anchor="middle" font-size="14" fill="#6B7280">训练步数 →</text>
+  <text x="60" y="70" font-size="14" fill="#6B7280">loss</text>
+
+  <!-- healthy -->
+  <path d="M 100 110 C 200 180, 300 225, 480 245 C 620 258, 740 262, 820 264" fill="none" stroke="#10B981" stroke-width="4"/>
+  <text x="620" y="240" font-size="14.5" font-weight="600" fill="#047857">✓ 健康：快速下降后趋平</text>
+
+  <!-- too high lr -->
+  <path d="M 100 120 C 160 200, 220 150, 280 230 C 340 300, 400 170, 470 250 C 540 300, 620 200, 700 260 C 750 280, 790 250, 820 270" fill="none" stroke="#EF4444" stroke-width="4"/>
+  <text x="600" y="150" font-size="14.5" font-weight="600" fill="#B91C1C">✗ 学习率过大：震荡甚至发散</text>
+
+  <!-- overfit -->
+  <path d="M 100 115 C 220 190, 340 235, 470 250 C 560 258, 610 270, 660 292 C 700 308, 740 318, 780 322" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="10 7"/>
+  <text x="640" y="292" font-size="14.5" font-weight="600" fill="#B45309">✗ 过拟合：后期回升（看 eval loss 才发现）</text>
+
+  <!-- tip -->
+  <text x="470" y="382" text-anchor="middle" font-size="14" fill="#374151">训练必看两件事：train loss 是否平稳下降 + 每 N 步 eval loss 是否同步（分叉 = 过拟合）</text>
+</svg>

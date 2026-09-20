@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 460" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">ORM 只看终点，PRM 盯着每一步</text>
+
+  <!-- shared question -->
+  <rect x="60" y="70" width="820" height="46" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="2"/>
+  <text x="470" y="99" text-anchor="middle" font-size="14.5" fill="#374151">题目：水果店 3 斤苹果 15 元，买 5 斤要多少钱？（模型解答走错了第二步）</text>
+
+  <!-- ORM side -->
+  <rect x="60" y="140" width="400" height="240" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="260" y="170" text-anchor="middle" font-size="16" font-weight="600" fill="#B45309">ORM： outcome 奖励</text>
+  <text x="260" y="200" text-anchor="middle" font-size="13.5" fill="#374151">只看最终答案：× 错 → 全程 0 分</text>
+  <text x="260" y="228" text-anchor="middle" font-size="13.5" fill="#6B7280">第一步 √ 第二步 × 第三步 √</text>
+  <text x="260" y="252" text-anchor="middle" font-size="14" font-weight="600" fill="#B45309">信号：整体 ✗（错在哪？不知道）</text>
+  <text x="260" y="290" text-anchor="middle" font-size="13" fill="#475569">优点：标注便宜（对答案就行）</text>
+  <text x="260" y="316" text-anchor="middle" font-size="13" fill="#475569">适合：答案可自动判定的短任务</text>
+  <text x="260" y="348" text-anchor="middle" font-size="13" fill="#9CA3AF">代表场景：RLVR 的前身思想</text>
+
+  <!-- PRM side -->
+  <rect x="480" y="140" width="400" height="240" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="680" y="170" text-anchor="middle" font-size="16" font-weight="600" fill="#047857">PRM：过程奖励</text>
+  <text x="680" y="200" text-anchor="middle" font-size="13.5" fill="#374151">逐步打分：</text>
+  <text x="680" y="226" text-anchor="middle" font-size="13.5" fill="#047857">第一步 √（1.0）第二步 ×（0.1）第三步 √（1.0）</text>
+  <text x="680" y="252" text-anchor="middle" font-size="14" font-weight="600" fill="#047857">信号：精确定位「第二步歪了」</text>
+  <text x="680" y="290" text-anchor="middle" font-size="13" fill="#475569">优点：可指导重试/搜索/逐步 RL</text>
+  <text x="680" y="316" text-anchor="middle" font-size="13" fill="#475569">代价：逐步标注极贵 → 用 MC rollout 造</text>
+  <text x="680" y="348" text-anchor="middle" font-size="13" fill="#9CA3AF">代表：Let's Verify / Math-Shepherd</text>
+
+  <text x="470" y="424" text-anchor="middle" font-size="14.5" fill="#374151">Let's Verify 的结论：推理任务上 PRM 显著胜 ORM——错在过程的问题，要过程级的信号才治得了</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">STaR：对错答案的不同用法，开启自我改进</text>
+
+  <!-- model -->
+  <rect x="70" y="170" width="180" height="80" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="160" y="202" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4ED8">当前模型</text>
+  <text x="160" y="228" text-anchor="middle" font-size="12.5" fill="#475569">采样解答</text>
+
+  <!-- two paths -->
+  <rect x="360" y="80" width="240" height="80" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="480" y="110" text-anchor="middle" font-size="15" font-weight="600" fill="#047857">答对了 ✓</text>
+  <text x="480" y="138" text-anchor="middle" font-size="13" fill="#475569">思维链直接进训练集（RFT）</text>
+
+  <rect x="360" y="250" width="240" height="80" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="480" y="280" text-anchor="middle" font-size="15" font-weight="600" fill="#B45309">答错了 ✗</text>
+  <text x="480" y="308" text-anchor="middle" font-size="13" fill="#475569">给提示（答案）重生成 → 再筛</text>
+
+  <!-- data -->
+  <rect x="690" y="170" width="170" height="80" rx="12" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="775" y="202" text-anchor="middle" font-size="15" font-weight="600" fill="#374151">新思维链数据</text>
+  <text x="775" y="228" text-anchor="middle" font-size="12.5" fill="#9CA3AF">→ SFT 回模型</text>
+
+  <line x1="250" y1="195" x2="354" y2="130" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="250" y1="225" x2="354" y2="285" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="600" y1="120" x2="684" y2="192" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="600" y1="290" x2="684" y2="228" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- loop back -->
+  <path d="M 775 250 C 775 380, 160 380, 160 256" fill="none" stroke="#10B981" stroke-width="3" stroke-dasharray="10 7" marker-end="url(#arrow)"/>
+  <text x="465" y="398" text-anchor="middle" font-size="14.5" font-weight="600" fill="#047857">闭环：模型变强 → 能自己做出更难的题 → 数据质量更高（错误答案也被「提示挽回」成训练素材）</text>
+</svg>

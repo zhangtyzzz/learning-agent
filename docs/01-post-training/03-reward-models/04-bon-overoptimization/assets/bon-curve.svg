@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <!-- axes -->
+  <line x1="90" y1="320" x2="870" y2="320" stroke="#374151" stroke-width="2"/>
+  <line x1="90" y1="320" x2="90" y2="70" stroke="#374151" stroke-width="2"/>
+  <text x="470" y="42" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">Best-of-N：加 N 提升准确率，但会饱和</text>
+  <text x="480" y="352" text-anchor="middle" font-size="14" fill="#6B7280">N（候选数，log 刻度）→</text>
+  <text x="62" y="80" font-size="14" fill="#6B7280">准确率</text>
+
+  <!-- baseline greedy -->
+  <line x1="90" y1="270" x2="870" y2="270" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="870" y="262" text-anchor="end" font-size="13.5" fill="#6B7280">greedy 基线</text>
+
+  <!-- BoN curve -->
+  <path d="M 110 300 C 180 190, 260 130, 360 105 C 450 88, 540 82, 620 80 C 700 80, 780 82, 840 84" fill="none" stroke="#10B981" stroke-width="4.5"/>
+  <text x="560" y="60" font-size="14.5" font-weight="600" fill="#047857">BoN + RM 重排：早期陡升，随后饱和</text>
+
+  <!-- saturation annotation -->
+  <circle cx="620" cy="80" r="7" fill="#1F2937"/>
+  <text x="620" y="112" text-anchor="middle" font-size="13.5" fill="#111827">收益用尽：候选池里没有更好的了</text>
+
+  <!-- contrast: weak rm -->
+  <path d="M 110 302 C 200 240, 300 210, 420 200 C 520 194, 620 198, 700 214 C 750 226, 790 244, 820 262" fill="none" stroke="#EF4444" stroke-width="3.5" stroke-dasharray="10 7"/>
+  <text x="660" y="248" font-size="14" font-weight="600" fill="#B91C1C">弱 RM：N 大后反而选中花哨错答</text>
+
+  <text x="470" y="392" text-anchor="middle" font-size="14.5" fill="#374151">两个上限：模型自身能力（候选池质量）× RM 可靠性（排序是否正确）——RL 相当于「用训练把两个上限都推高」</text>
+</svg>

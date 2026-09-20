@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="600" y="42" text-anchor="middle" font-size="22" font-weight="600" fill="#111827">LLM 训练全景：一条流水线，四个阶段</text>
+
+  <!-- post-training dashed frame -->
+  <rect x="478" y="86" width="692" height="200" rx="16" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="12 8"/>
+  <text x="824" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#B91C1C">★ 后训练（Post-Training）：你要学的算法全部在这里</text>
+
+  <!-- stage 1: pretrain -->
+  <rect x="40" y="140" width="200" height="120" rx="12" fill="#F3F4F6" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="140" y="172" text-anchor="middle" font-size="17" font-weight="600" fill="#374151">① 预训练</text>
+  <text x="140" y="200" text-anchor="middle" font-size="13" fill="#4B5563">~10¹³ token 网页/代码</text>
+  <text x="140" y="224" text-anchor="middle" font-size="13" fill="#4B5563">目标：next-token</text>
+  <text x="140" y="248" text-anchor="middle" font-size="12.5" fill="#9CA3AF">算力占 99%</text>
+
+  <!-- stage 2: midtrain -->
+  <rect x="268" y="140" width="200" height="120" rx="12" fill="#F3F4F6" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="368" y="172" text-anchor="middle" font-size="17" font-weight="600" fill="#374151">② 中训练 / 退火</text>
+  <text x="368" y="200" text-anchor="middle" font-size="13" fill="#4B5563">高质量数据 · 长上下文</text>
+  <text x="368" y="224" text-anchor="middle" font-size="13" fill="#4B5563">目标：还是 next-token</text>
+  <text x="368" y="248" text-anchor="middle" font-size="12.5" fill="#9CA3AF">数据配比的炼金术</text>
+
+  <!-- stage 3: SFT -->
+  <rect x="500" y="140" width="200" height="120" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="600" y="172" text-anchor="middle" font-size="17" font-weight="600" fill="#1D4ED8">③ SFT 指令微调</text>
+  <text x="600" y="200" text-anchor="middle" font-size="13" fill="#4B5563">10⁴~10⁶ 条指令对</text>
+  <text x="600" y="224" text-anchor="middle" font-size="13" fill="#4B5563">目标：模仿标准答案</text>
+  <text x="600" y="248" text-anchor="middle" font-size="12.5" fill="#9CA3AF">学会「对话的格式」</text>
+
+  <!-- stage 4: alignment -->
+  <rect x="730" y="140" width="200" height="120" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="830" y="172" text-anchor="middle" font-size="17" font-weight="600" fill="#047857">④ 偏好对齐</text>
+  <text x="830" y="200" text-anchor="middle" font-size="13" fill="#4B5563">10⁴~10⁵ 条偏好对</text>
+  <text x="830" y="224" text-anchor="middle" font-size="13" fill="#4B5563">目标：RLHF / DPO</text>
+  <text x="830" y="248" text-anchor="middle" font-size="12.5" fill="#9CA3AF">学会「人类更喜欢啥」</text>
+
+  <!-- stage 5: RLVR -->
+  <rect x="960" y="140" width="200" height="120" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="1060" y="172" text-anchor="middle" font-size="17" font-weight="600" fill="#B45309">⑤ RLVR 推理 RL</text>
+  <text x="1060" y="200" text-anchor="middle" font-size="13" fill="#4B5563">数学/代码可验证任务</text>
+  <text x="1060" y="224" text-anchor="middle" font-size="13" fill="#4B5563">目标：GRPO / PPO</text>
+  <text x="1060" y="248" text-anchor="middle" font-size="12.5" fill="#9CA3AF">学会「自己想明白」</text>
+
+  <!-- arrows -->
+  <line x1="240" y1="200" x2="264" y2="200" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="468" y1="200" x2="496" y2="200" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="700" y1="200" x2="726" y2="200" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="930" y1="200" x2="956" y2="200" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- capability ribbon -->
+  <text x="600" y="330" text-anchor="middle" font-size="15" font-weight="600" fill="#111827">能力变化：语言与知识 → 长文与代码 → 指令跟随 → 符合人类偏好 → 深度推理与长思维链</text>
+  <line x1="120" y1="345" x2="1080" y2="345" stroke="#E5E7EB" stroke-width="4"/>
+  <circle cx="140" cy="345" r="7" fill="#9CA3AF"/>
+  <circle cx="368" cy="345" r="7" fill="#9CA3AF"/>
+  <circle cx="600" cy="345" r="7" fill="#3B82F6"/>
+  <circle cx="830" cy="345" r="7" fill="#10B981"/>
+  <circle cx="1060" cy="345" r="7" fill="#F59E0B"/>
+
+  <!-- key line -->
+  <text x="600" y="400" text-anchor="middle" font-size="15.5" fill="#374151">①② 拼算力和数据，算法成分低；③④⑤ 才是「算法的主战场」，也是本课程后面所有内容的地盘</text>
+  <text x="600" y="432" text-anchor="middle" font-size="13.5" fill="#9CA3AF">数字为公开报告的常见量级，不同模型有出入；重点是相对关系</text>
+</svg>

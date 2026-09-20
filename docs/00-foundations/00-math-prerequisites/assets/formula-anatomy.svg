@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">把这条公式拆成零件，一个一个读</text>
+
+  <!-- ===== the formula, drawn as fraction ===== -->
+  <!-- π(a|s) -->
+  <text x="180" y="248" font-size="34" font-style="italic" font-weight="600" fill="#1D4ED8">π(a | s)</text>
+  <text x="300" y="248" font-size="34" fill="#111827">=</text>
+
+  <!-- numerator -->
+  <text x="490" y="196" text-anchor="middle" font-size="27" fill="#B45309">e<tspan dy="-13" font-size="17">z_a / T</tspan></text>
+  <!-- fraction bar -->
+  <line x1="380" y1="212" x2="600" y2="212" stroke="#111827" stroke-width="3"/>
+  <!-- denominator -->
+  <text x="490" y="256" text-anchor="middle" font-size="27" fill="#047857">Σ<tspan dy="-13" font-size="16">a′</tspan><tspan dy="13" font-size="27"> e</tspan><tspan dy="-13" font-size="17">z_a′ / T</tspan></text>
+
+  <!-- ===== callouts ===== -->
+  <!-- π callout (left) -->
+  <path d="M 165 230 C 120 200, 100 180, 90 158" fill="none" stroke="#3B82F6" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="46" y="112" font-size="15.5" font-weight="600" fill="#1D4ED8">π = 策略（不是圆周率！）</text>
+  <text x="46" y="136" font-size="14" fill="#374151">π(a|s)：给 s 选 a 的概率</text>
+  <text x="46" y="158" font-size="14" fill="#374151">竖线 | 读「在…条件下」</text>
+
+  <!-- numerator callout (top) -->
+  <path d="M 490 172 L 490 120" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="490" y="76" text-anchor="middle" font-size="15.5" font-weight="600" fill="#B45309">分子：a 的「放大后」打分</text>
+  <text x="490" y="100" text-anchor="middle" font-size="14" fill="#374151">e^x 让打分变正数、拉开差距；z_a 是 token a 的原始打分</text>
+
+  <!-- denominator callout (bottom) -->
+  <path d="M 490 272 L 490 320" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="490" y="348" text-anchor="middle" font-size="15.5" font-weight="600" fill="#047857">分母：所有 token 的放大后打分，加在一起</text>
+  <text x="490" y="372" text-anchor="middle" font-size="14" fill="#374151">Σ（大写 sigma）= 求和：把 15 万个全加起来；a′（带撇）=「其他所有的」</text>
+
+  <!-- T callout (right) -->
+  <path d="M 585 180 C 680 150, 720 140, 780 130" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="700" y="104" font-size="15.5" font-weight="600" fill="#B91C1C">T = 温度</text>
+  <text x="700" y="128" font-size="14" fill="#374151">除得越大分布越平</text>
+
+  <!-- translation strip -->
+  <rect x="60" y="410" width="820" height="60" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <text x="470" y="435" text-anchor="middle" font-size="16.5" font-weight="600" fill="#1D4ED8">翻译成中文：「a 的概率 = a 的放大打分 ÷ 全部放大打分之和」</text>
+  <text x="470" y="458" text-anchor="middle" font-size="14" fill="#374151">就是算「a 占总打分的份额」——份额大，被采样到的概率就大</text>
+
+  <text x="470" y="512" text-anchor="middle" font-size="14.5" fill="#6B7280">数值代入（z = 2.0, 1.0, 0.5，T = 1）：e²=7.39, e¹=2.72, e^0.5=1.65，和 = 11.76 → 概率 0.63 / 0.23 / 0.14（下一节的温度图）</text>
+</svg>

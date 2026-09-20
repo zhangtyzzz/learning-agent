@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">判别式 RM vs GenRM：给分 vs 先说理再给分</text>
+
+  <!-- discriminative -->
+  <rect x="60" y="80" width="400" height="250" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="260" y="112" text-anchor="middle" font-size="16.5" font-weight="600" fill="#B45309">判别式 RM（第 1 讲）</text>
+  <rect x="100" y="140" width="320" height="60" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="260" y="164" text-anchor="middle" font-size="13.5" fill="#374151">输入 (x, y) → 标量头 → 0.73</text>
+  <text x="260" y="186" text-anchor="middle" font-size="12.5" fill="#9CA3AF">黑盒给分</text>
+  <text x="260" y="238" text-anchor="middle" font-size="13.5" fill="#374151">✓ 便宜：一次前向</text>
+  <text x="260" y="266" text-anchor="middle" font-size="13.5" fill="#374151">✗ 不可解释，难定位错误</text>
+  <text x="260" y="294" text-anchor="middle" font-size="13.5" fill="#374151">✗ 训练需要偏好对数据</text>
+
+  <!-- generative -->
+  <rect x="500" y="80" width="400" height="250" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="700" y="112" text-anchor="middle" font-size="16.5" font-weight="600" fill="#047857">GenRM 生成式验证器</text>
+  <rect x="540" y="140" width="320" height="60" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+  <text x="700" y="162" text-anchor="middle" font-size="13.5" fill="#374151">输入 (x, y) → 生成评语 → 输出</text>
+  <text x="700" y="184" text-anchor="middle" font-size="13" font-weight="600" fill="#047857">「第二步单位换算错了 → 否」</text>
+  <text x="700" y="216" text-anchor="middle" font-size="13" fill="#9CA3AF">本质：把验证变成 next-token 预测</text>
+  <text x="700" y="252" text-anchor="middle" font-size="13.5" fill="#374151">✓ 可解释、可用 CoT 提升精度</text>
+  <text x="700" y="280" text-anchor="middle" font-size="13.5" fill="#374151">✓ 可直接用强模型零样本起步</text>
+  <text x="700" y="308" text-anchor="middle" font-size="13.5" fill="#374151">✗ 贵：评语生成是完整推理</text>
+
+  <text x="470" y="372" text-anchor="middle" font-size="14.5" fill="#374151">选型直觉：批量粗筛用判别式；少量关键决策/需要理由的场景用 GenRM；预算够 → GenRM + 判别式级联</text>
+</svg>

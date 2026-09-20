@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 460" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">Test-Time Scaling 谱系：四种「多想」的姿势</text>
+
+  <!-- root -->
+  <rect x="380" y="70" width="180" height="56" rx="10" fill="#F9FAFB" stroke="#6B7280" stroke-width="2.5"/>
+  <text x="470" y="94" text-anchor="middle" font-size="14.5" font-weight="600" fill="#374151">同一个 prompt</text>
+  <text x="470" y="116" text-anchor="middle" font-size="12" fill="#9CA3AF">算力预算换成什么？</text>
+
+  <!-- four branches -->
+  <rect x="40" y="190" width="200" height="150" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="140" y="218" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1D4ED8">① 多采 + 投票</text>
+  <text x="140" y="244" text-anchor="middle" font-size="12.5" fill="#475569">Self-Consistency</text>
+  <text x="140" y="270" text-anchor="middle" font-size="12.5" fill="#475569">成本：N 倍生成</text>
+  <text x="140" y="296" text-anchor="middle" font-size="12.5" fill="#9CA3AF">适合：答案可投票（数/选）</text>
+  <text x="140" y="322" text-anchor="middle" font-size="12.5" fill="#9CA3AF">裁判：众数</text>
+
+  <rect x="260" y="190" width="200" height="150" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="360" y="218" text-anchor="middle" font-size="14.5" font-weight="600" fill="#047857">② 多采 + 重排</text>
+  <text x="360" y="244" text-anchor="middle" font-size="12.5" fill="#475569">Best-of-N（RM/PRM 打分）</text>
+  <text x="360" y="270" text-anchor="middle" font-size="12.5" fill="#475569">成本：N 生成 + N 打分</text>
+  <text x="360" y="296" text-anchor="middle" font-size="12.5" fill="#9CA3AF">适合：有可靠打分器</text>
+  <text x="360" y="322" text-anchor="middle" font-size="12.5" fill="#9CA3AF">裁判：RM（会饱和/被 hack）</text>
+
+  <rect x="480" y="190" width="200" height="150" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="580" y="218" text-anchor="middle" font-size="14.5" font-weight="600" fill="#B45309">③ 搜索式</text>
+  <text x="580" y="244" text-anchor="middle" font-size="12.5" fill="#475569">Beam / MCTS（rStar-Math）</text>
+  <text x="580" y="270" text-anchor="middle" font-size="12.5" fill="#475569">成本：极高（树展开）</text>
+  <text x="580" y="296" text-anchor="middle" font-size="12.5" fill="#9CA3AF">适合：可分解的推理步骤</text>
+  <text x="580" y="322" text-anchor="middle" font-size="12.5" fill="#9CA3AF">裁判：PRM 每步打分</text>
+
+  <rect x="700" y="190" width="200" height="150" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="800" y="218" text-anchor="middle" font-size="14.5" font-weight="600" fill="#B91C1C">④ 让它想更久</text>
+  <text x="800" y="244" text-anchor="middle" font-size="12.5" fill="#475569">Budget Forcing（s1）</text>
+  <text x="800" y="270" text-anchor="middle" font-size="12.5" fill="#475569">成本：更长的单条生成</text>
+  <text x="800" y="296" text-anchor="middle" font-size="12.5" fill="#9CA3AF">适合：R1 类推理模型</text>
+  <text x="800" y="322" text-anchor="middle" font-size="12.5" fill="#9CA3AF">裁判：无（可控思考预算）</text>
+
+  <line x1="440" y1="126" x2="170" y2="184" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="455" y1="126" x2="390" y2="184" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="485" y1="126" x2="550" y2="184" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="500" y1="126" x2="770" y2="184" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <text x="470" y="390" text-anchor="middle" font-size="14.5" fill="#374151">谱系逻辑：裁判从「众数」→「学习到的 RM」→「过程级 PRM」→「不需要裁判（奖励已内化进策略）」</text>
+  <text x="470" y="418" text-anchor="middle" font-size="13.5" fill="#9CA3AF">④ 的过度使用 = overthinking（简单题也想半天）→ long2short 训练是它的解药</text>
+</svg>

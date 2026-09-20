@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 400" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="38" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">同一个真实分布 p（双峰），KL 方向不同，拟合结果完全不同</text>
+
+  <!-- ===== left panel: KL(p||q) covering ===== -->
+  <text x="240" y="80" text-anchor="middle" font-size="16.5" font-weight="600" fill="#1F2937">KL(p‖q)：正向 ·「罩住所有质量」</text>
+
+  <!-- axis -->
+  <line x1="60" y1="290" x2="430" y2="290" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- p: two narrow blue bumps -->
+  <path d="M 105 290 Q 140 130 175 290" fill="none" stroke="#3B82F6" stroke-width="4"/>
+  <path d="M 305 290 Q 340 130 375 290" fill="none" stroke="#3B82F6" stroke-width="4"/>
+  <text x="240" y="316" text-anchor="middle" font-size="13.5" fill="#3B82F6">p（真实：两种都很常见）</text>
+
+  <!-- q: one broad orange bump covering both -->
+  <path d="M 80 290 Q 240 96 400 290" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="9 6"/>
+  <text x="240" y="120" text-anchor="middle" font-size="13.5" fill="#B45309">q（拟合）：摊平自己，两边都覆盖</text>
+
+  <text x="240" y="352" text-anchor="middle" font-size="14.5" fill="#374151">两个峰都不敢漏 →「平均、保守」</text>
+  <text x="240" y="376" text-anchor="middle" font-size="14.5" fill="#6B7280">典型用途：正向 KL 做蒸馏/拟合数据</text>
+
+  <!-- ===== right panel: KL(q||p) mode seeking ===== -->
+  <text x="700" y="80" text-anchor="middle" font-size="16.5" font-weight="600" fill="#1F2937">KL(q‖p)：反向 ·「押一个峰」</text>
+
+  <line x1="520" y1="290" x2="890" y2="290" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- p: two narrow blue bumps -->
+  <path d="M 565 290 Q 600 130 635 290" fill="none" stroke="#3B82F6" stroke-width="4"/>
+  <path d="M 765 290 Q 800 130 835 290" fill="none" stroke="#3B82F6" stroke-width="4"/>
+  <text x="700" y="316" text-anchor="middle" font-size="13.5" fill="#3B82F6">p（真实：两种都很常见）</text>
+
+  <!-- q: one narrow orange bump on left mode -->
+  <path d="M 570 290 Q 602 118 634 290" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="9 6"/>
+  <text x="760" y="150" text-anchor="middle" font-size="13.5" fill="#B45309">q（拟合）：只敢押一个峰</text>
+
+  <text x="700" y="352" text-anchor="middle" font-size="14.5" fill="#374151">绝不出错的地方才生成 →「激进、单一」</text>
+  <text x="700" y="376" text-anchor="middle" font-size="14.5" fill="#6B7280">反向 KL 用于 RL：宁可保守也别越界</text>
+</svg>

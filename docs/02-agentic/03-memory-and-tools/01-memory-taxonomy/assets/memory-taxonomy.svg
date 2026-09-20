@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 440" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <text x="470" y="40" text-anchor="middle" font-size="21" font-weight="600" fill="#111827">Agent 记忆四分法：按「存多久、存什么」切</text>
+
+  <!-- 4 layers -->
+  <rect x="60" y="80" width="820" height="76" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="90" y="112" font-size="15.5" font-weight="600" fill="#1D4ED8">① 工作记忆（本回合）</text>
+  <text x="420" y="112" font-size="13" fill="#475569">当前上下文窗口里的内容</text>
+  <text x="90" y="140" font-size="12.5" fill="#6B7280">机制：context 管理　｜　失败模式：窗口溢出、注意力稀释</text>
+
+  <rect x="60" y="172" width="820" height="76" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <text x="90" y="204" font-size="15.5" font-weight="600" fill="#047857">② 情景记忆（跨回合）</text>
+  <text x="420" y="204" font-size="13" fill="#475569">过去交互的具体经历（做过什么、成败）</text>
+  <text x="90" y="232" font-size="12.5" fill="#6B7280">机制：轨迹日志 + 检索　｜　失败模式：检索不到、时间线混乱</text>
+
+  <rect x="60" y="264" width="820" height="76" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="90" y="296" font-size="15.5" font-weight="600" fill="#B45309">③ 语义记忆（长期事实）</text>
+  <text x="420" y="296" font-size="13" fill="#475569">提炼后的知识（用户偏好、领域结论）</text>
+  <text x="90" y="324" font-size="12.5" fill="#6B7280">机制：知识库/GraphRAG　｜　失败模式：过期、矛盾、污染</text>
+
+  <rect x="60" y="356" width="820" height="60" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="90" y="382" font-size="15.5" font-weight="600" fill="#B91C1C">④ 程序记忆（技能）</text>
+  <text x="420" y="382" font-size="13" fill="#475569">会做的事：成功步骤沉淀成的可复用技能</text>
+  <text x="90" y="406" font-size="12.5" fill="#991B1B">机制：技能库/工具模板（Voyager 式）　｜　失败模式：过拟合旧情境</text>
+
+  <text x="470" y="35" text-anchor="middle" font-size="0" fill="#111827">.</text>
+</svg>
