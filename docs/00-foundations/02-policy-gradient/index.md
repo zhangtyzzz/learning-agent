@@ -79,7 +79,7 @@ SFT 对目标序列每个 token 一律推高（−logπ）；REINFORCE 用回报
 </details>
 
 <details markdown="1"><summary>② 为什么减 baseline 不改变期望？</summary>
-b(s) 与动作 a 无关：E_{a~π}[∇log π(a|s)·b(s)] = b·∇Σπ = 0（概率归一化，log 概率梯度在分布内求和为零）。
+b(s) 与动作 a 无关：`E[∇log π(a|s)·b(s)] = b·∇Σπ(a|s) = 0`（概率归一化，log 概率梯度在分布内求和为零）。
 </details>
 
 <details markdown="1"><summary>③ λ=0 和 λ=1 的 GAE 分别等价于什么？各自的偏差/方差特点？</summary>

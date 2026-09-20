@@ -1,0 +1,153 @@
+module.exports = {
+  main: [
+    "index",
+    "ROADMAP",
+    {
+      type: "category",
+      label: "地基课程",
+      link: { type: "doc", id: "00-foundations/README" },
+      items: [
+        "00-foundations/symbol-reference",
+        "00-foundations/00-math-prerequisites/index",
+        "00-foundations/01-mdp/index",
+        "00-foundations/02-policy-gradient/index",
+        "00-foundations/03-ppo/index",
+        "00-foundations/04-kl-divergence/index",
+        "00-foundations/05-bradley-terry/index",
+        "00-foundations/06-llm-training-panorama/index",
+      ],
+    },
+    {
+      type: "category",
+      label: "后训练主线 ★",
+      link: { type: "doc", id: "01-post-training/README" },
+      items: [
+        {
+          type: "category",
+          label: "01 SFT 与数据",
+          link: { type: "doc", id: "01-post-training/01-sft-and-data/README" },
+          items: [
+            "01-post-training/01-sft-and-data/01-instruction-tuning/index",
+            "01-post-training/01-sft-and-data/02-data-engineering/index",
+            "01-post-training/01-sft-and-data/03-lora-peft/index",
+            "01-post-training/01-sft-and-data/04-sft-practice/index",
+          ],
+        },
+        {
+          type: "category",
+          label: "02 偏好对齐",
+          link: { type: "doc", id: "01-post-training/02-preference-alignment/README" },
+          items: [
+            "01-post-training/02-preference-alignment/01-rlhf-three-stages/index",
+            "01-post-training/02-preference-alignment/02-dpo-derivation/index",
+            "01-post-training/02-preference-alignment/03-dpo-family/index",
+            "01-post-training/02-preference-alignment/04-rlaif-reward-hacking/index",
+          ],
+        },
+        {
+          type: "category",
+          label: "03 奖励模型",
+          link: { type: "doc", id: "01-post-training/03-reward-models/README" },
+          items: [
+            "01-post-training/03-reward-models/01-rm-basics/index",
+            "01-post-training/03-reward-models/02-orm-vs-prm/index",
+            "01-post-training/03-reward-models/03-genrm-eval/index",
+            "01-post-training/03-reward-models/04-bon-overoptimization/index",
+          ],
+        },
+        {
+          type: "category",
+          label: "04 LLM 强化学习 ★",
+          link: { type: "doc", id: "01-post-training/04-rl-for-llm/README" },
+          items: [
+            "01-post-training/04-rl-for-llm/01-ppo-for-llm/index",
+            "01-post-training/04-rl-for-llm/02-grpo/index",
+            "01-post-training/04-rl-for-llm/03-grpo-variants/index",
+            "01-post-training/04-rl-for-llm/04-rlvr-and-verl/index",
+          ],
+        },
+        {
+          type: "category",
+          label: "05 推理模型",
+          link: { type: "doc", id: "01-post-training/05-reasoning/README" },
+          items: [
+            "01-post-training/05-reasoning/01-cot-to-star/index",
+            "01-post-training/05-reasoning/02-deepseek-r1/index",
+            "01-post-training/05-reasoning/03-test-time-scaling/index",
+            "01-post-training/05-reasoning/04-mini-r1-practice/index",
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Agent 算法",
+      link: { type: "doc", id: "02-agentic/README" },
+      items: [
+        {
+          type: "category",
+          label: "01 Agent 范式",
+          link: { type: "doc", id: "02-agentic/01-agent-paradigms/README" },
+          items: [
+            "02-agentic/01-agent-paradigms/01-react-trajectory/index",
+            "02-agentic/01-agent-paradigms/02-reflection-planning/index",
+            "02-agentic/01-agent-paradigms/03-tool-learning/index",
+          ],
+        },
+        {
+          type: "category",
+          label: "02 Agentic RL ★",
+          link: { type: "doc", id: "02-agentic/02-agentic-rl/README" },
+          items: [
+            "02-agentic/02-agentic-rl/01-four-challenges/index",
+            "02-agentic/02-agentic-rl/02-sft-to-rl-timeline/index",
+            "02-agentic/02-agentic-rl/03-frontier-methods/index",
+            "02-agentic/02-agentic-rl/04-search-r1-practice/index",
+          ],
+        },
+        {
+          type: "category",
+          label: "03 记忆与长程",
+          link: { type: "doc", id: "02-agentic/03-memory-and-tools/README" },
+          items: [
+            "02-agentic/03-memory-and-tools/01-memory-taxonomy/index",
+            "02-agentic/03-memory-and-tools/02-memgpt-self-editing/index",
+            "02-agentic/03-memory-and-tools/03-context-engineering/index",
+          ],
+        },
+        {
+          type: "category",
+          label: "04 多智能体与自我改进",
+          link: { type: "doc", id: "02-agentic/04-multi-agent/README" },
+          items: [
+            "02-agentic/04-multi-agent/01-self-improvement-loop/index",
+            "02-agentic/04-multi-agent/02-orchestration-patterns/index",
+            "02-agentic/04-multi-agent/03-train-vs-orchestrate/index",
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "工具箱",
+      items: [
+        "03-practice/README",
+        "04-papers/README",
+        "04-papers/PAPER-INDEX",
+        "04-papers/inbox/README",
+        "05-knowledge-graph/README",
+        "05-knowledge-graph/GRAPH",
+        "06-tracking/README",
+        "06-tracking/sources",
+        "06-tracking/weekly/2026-W38",
+        "templates/paper-note",
+        "templates/concept-note",
+        "templates/weekly-digest",
+        "wiki/workflow",
+        "wiki/index",
+        "raw/README",
+        "wiki/qa/2026-09-20-dapo-clip-higher",
+      ],
+    },
+  ],
+};

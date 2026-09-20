@@ -1,4 +1,6 @@
-site/
+node_modules/
+build/
+.docusaurus/
+.DS_Store
 __pycache__/
 *.pyc
-.DS_Store

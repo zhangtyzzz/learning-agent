@@ -13,7 +13,7 @@
 | 资料 | 定位 | 看什么 |
 |---|---|---|
 | Voyager | arXiv 2305.16291 | 技能库的存储与检索（程序记忆的代表） |
-| Letta（MemGPT 产品化） | https://lettuce…… 搜「Letta agents」 | MemGPT 思想的工程化形态 |
+| Letta（MemGPT 产品化） | 搜「Letta agents」（官网 letta.com） | MemGPT 思想的工程化形态 |
 
 ## 精读要点
 

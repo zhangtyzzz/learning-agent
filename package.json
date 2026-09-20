@@ -1,0 +1,25 @@
+{
+  "name": "learning-agent",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "docusaurus start",
+    "build": "docusaurus build",
+    "clear": "docusaurus clear"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.7.0",
+    "@docusaurus/preset-classic": "^3.7.0",
+    "@docusaurus/theme-mermaid": "^3.7.0",
+    "@easyops-cn/docusaurus-search-local": "^0.49.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rehype-katex": "^7.0.1",
+    "remark-github-blockquote-alert": "^1.2.1",
+    "remark-math": "^6.0.0"
+  },
+  "browserslist": {
+    "production": [">0.5%", "not dead"],
+    "development": ["last 3 chrome versions", "last 5 firefox versions", "last 3 safari versions"]
+  }
+}
