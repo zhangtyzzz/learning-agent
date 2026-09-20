@@ -24,5 +24,6 @@ sources: ["01-post-training/04-rl-for-llm/02-grpo/index.md", "01-post-training/0
 
 - [04-rl-for-llm · GRPO](../../01-post-training/04-rl-for-llm/02-grpo/index.md)（四病灶之③）
 - [04-rl-for-llm · 变体地图](../../01-post-training/04-rl-for-llm/03-grpo-variants/index.md)（DAPO 动态采样）
+- [姊妹篇 · judge 当奖励源的实践形态](2026-09-20-judge-as-reward-grpo.md)
 - [偏好对齐 · RLAIF 与 Reward Hacking](../../01-post-training/02-preference-alignment/04-rlaif-reward-hacking/index.md)（Goodhart 曲线）
 - [Agent · 多智能体 · 自我改进闭环](../../02-agentic/04-multi-agent/01-self-improvement-loop/index.md)（闭环质量 ≤ 评估质量）
