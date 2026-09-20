@@ -11,6 +11,7 @@
 | 日期 | 问题 | 一句话结论 | 链接 |
 |---|---|---|---|
 | 2026-09-20 | DAPO 的 clip-higher 为什么能防熵坍缩？ | 对称 clip 会封死低概率「好 token」的上升通道，分布只缩不放 | [qa/2026-09-20-dapo-clip-higher.md](qa/2026-09-20-dapo-clip-higher.md) |
+| 2026-09-20 | LLM judge 给 GRPO 组内排名，能解决全对/全错零梯度吗？ | 不能——零梯度是无信息的诚实信号，judge 排名制造的是假差异 | [qa/2026-09-20-llm-judge-grpo-zero-gradient.md](qa/2026-09-20-llm-judge-grpo-zero-gradient.md) |
 
 ## 使用说明
 
